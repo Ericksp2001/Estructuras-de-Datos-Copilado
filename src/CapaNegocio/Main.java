@@ -9,5 +9,7 @@ package CapaNegocio;
  * @author Erick Perez
  */
 public class Main {
-    
+   public void Saludo(){
+       System.out.println("Holaaaa");
+   }
 }
