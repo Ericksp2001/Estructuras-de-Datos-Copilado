@@ -4,8 +4,6 @@
  */
 package EstDatosNormales;
 
-import EstVeterinaria.ClsVeterinaria;
-
 /**
  * 20/12/2021
  * @author Erick Perez
@@ -28,8 +26,8 @@ public class ColaEst {
     public void setCola(ListaEst cola) {
         this._cola = cola;
     }
-    public boolean encolar(ClsVeterinaria registrovet){
-        return _cola.poner(_cola.numEle()+1,registrovet);
+    public boolean encolar( RegLibro libro){
+        return _cola.poner(_cola.numEle()+1, libro);
     }
     public boolean desencolar(){
         return _cola.sacar(1);

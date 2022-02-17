@@ -1,25 +1,22 @@
 
 package EstEnlacesDobles;
-
-import EstVeterinaria.ClsVeterinaria;
-
 /**
  *
  * @author Erick Perez
  * 29/01/2021
  */
 public class ClsNodo2 {
-    private ClsVeterinaria _inf;
+    private ClsAnimal _inf;
     private ClsNodo2 _enlizq;
     private ClsNodo2 _enlder;
     
     //Constructores
     public ClsNodo2 () {
-        _inf = new ClsVeterinaria();
+        _inf = new ClsAnimal();
         _enlizq=null;
         _enlder=null;
     }
-    public ClsNodo2(ClsVeterinaria recep){
+    public ClsNodo2(ClsAnimal recep){
         this._inf=recep;
         _enlizq=null;
         _enlder=null;
@@ -47,11 +44,11 @@ public class ClsNodo2 {
         return _enlder;
     }
     
-     public void inf(ClsVeterinaria dato){
+     public void inf(ClsAnimal dato){
         _inf=dato;
     }
     
-    public ClsVeterinaria inf(){
+    public ClsAnimal inf(){
         return _inf;
     }
 }

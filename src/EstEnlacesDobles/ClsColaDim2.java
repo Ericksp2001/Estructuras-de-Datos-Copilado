@@ -1,8 +1,5 @@
 
 package EstEnlacesDobles;
-
-import EstVeterinaria.ClsVeterinaria;
-
 /**
  *
  * @author Erick Perez
@@ -32,7 +29,7 @@ public class ClsColaDim2 {
      * Adaptacion del metodo poner de la clase ClsListDim2 que cumple con la estructura de una cola
      * @param dato Objeto de tipo ClsAnimal que sera contenido en un nodo
      */
-    public void Poner(ClsVeterinaria dato){
+    public void Poner(ClsAnimal dato){
         _Cola.poner(1, dato, true);
     }
 

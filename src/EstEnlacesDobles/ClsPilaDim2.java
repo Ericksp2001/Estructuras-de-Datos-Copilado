@@ -1,9 +1,6 @@
 
 
 package EstEnlacesDobles;
-
-import EstVeterinaria.ClsVeterinaria;
-
 /**
  *
  * @author Erick Perez
@@ -35,7 +32,7 @@ public class ClsPilaDim2 {
      * Adaptacion del metodo poner de la clase ClsListDim2 que cumple con la estrcutura de una pila
      * @param dato Objeto de tipo ClsAnimal que sera contenido en un nodo
      */
-    public void Poner(ClsVeterinaria dato){
+    public void Poner(ClsAnimal dato){
         _Pila.poner(1, dato, true);
     }
 

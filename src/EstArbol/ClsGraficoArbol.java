@@ -102,7 +102,7 @@ public class ClsGraficoArbol extends JPanel{
             center = right - rd.width - hijo2hijo/2;
         else if (left != Integer.MAX_VALUE)
             center = left + ld.width + hijo2hijo/2;
-        int width = fuente.stringWidth(n.getInf().CostoFactura()+"");
+        int width = fuente.stringWidth(n.getInf().getPrecio()+"");
         
         posicionNodos.put(n,new Rectangle(center - width/2 - 3, top, width + 6, fuente.getHeight()));
         
@@ -125,7 +125,7 @@ public class ClsGraficoArbol extends JPanel{
         
         Rectangle r = (Rectangle) posicionNodos.get(n);
         g.draw(r);
-        g.drawString(n.getInf().CostoFactura()+"", r.x + 3, r.y + yoffs);
+        g.drawString(n.getInf().getPrecio()+"", r.x + 3, r.y + yoffs);
         
         if (puntox != Integer.MAX_VALUE)  
             
