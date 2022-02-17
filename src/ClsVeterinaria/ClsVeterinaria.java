@@ -8,7 +8,7 @@ package ClsVeterinaria;
  *
  * @author Alex
  */
-public class RegistroVeterinaria {
+public class ClsVeterinaria {
    
     String _NombreMascota;
     String _RazaMascota;
@@ -20,7 +20,7 @@ public class RegistroVeterinaria {
     String _Telefono;
     Double _CostoFactura;
 
-    public RegistroVeterinaria() {
+    public ClsVeterinaria() {
         _NombreMascota =null;
         _RazaMascota =null;
         _SexoMascota =null;
@@ -32,7 +32,7 @@ public class RegistroVeterinaria {
         _CostoFactura = 0.00;
     }
 
-    public RegistroVeterinaria(String _NombreMascota, String _RazaMascota, String _SexoMascota, int _EdadMascota, Double _PesoMascota, String _NombreDueño, String _IdDueño, String _Telefono, Double _CostoFactura) {
+    public ClsVeterinaria(String _NombreMascota, String _RazaMascota, String _SexoMascota, int _EdadMascota, Double _PesoMascota, String _NombreDueño, String _IdDueño, String _Telefono, Double _CostoFactura) {
         this._NombreMascota = _NombreMascota;
         this._RazaMascota = _RazaMascota;
         this._SexoMascota = _SexoMascota;

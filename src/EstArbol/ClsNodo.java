@@ -3,7 +3,7 @@
 package EstArbol;
 
 public class ClsNodo {
-    private ClsRecepcion  _inf;
+    private ClsVeterinaria _inf;
     private ClsNodo _enlizq;
     private ClsNodo _enlder;
     
