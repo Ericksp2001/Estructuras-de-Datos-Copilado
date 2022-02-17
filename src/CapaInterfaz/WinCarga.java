@@ -4,17 +4,50 @@
  */
 package CapaInterfaz;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+import javax.swing.UIManager;
+
 /**
  *
  * @author Erick Perez
  */
-public class WinInicio extends javax.swing.JFrame {
+public class WinCarga extends javax.swing.JFrame {
 
     /**
-     * Creates new form WinInicio
+     * Creates new form WinGeneral
      */
-    public WinInicio() {
+    ActionListener ac;
+    int x=0;
+    Timer t;
+    
+    public WinCarga() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setSize(600, 476);
+        ac=new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                x=x+1;
+                ItBarra.setValue(x);
+                if(ItBarra.getValue()==30){
+                    txtMensaje.setText("Va progresando...");
+                }
+                if(ItBarra.getValue()==70){
+                    txtMensaje.setText("Ya mismo termina...");
+                }
+                if(ItBarra.getValue()==100){
+                    WinGeneral b = new WinGeneral();
+                    b.setVisible(true);
+                    dispose();
+                }
+            }
+        };
+        t=new Timer(50,ac);
+        t.start();
+        UIManager.put("nimbusOrange", new Color(0, 160, 230));
     }
 
     /**
@@ -27,23 +60,25 @@ public class WinInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         content = new javax.swing.JPanel();
-        imgBienvenido = new javax.swing.JLabel();
-        Menu = new javax.swing.JMenuBar();
-        Opciones = new javax.swing.JMenu();
-        Creditos = new javax.swing.JMenu();
+        ItBarra = new javax.swing.JProgressBar();
+        txtMensaje = new javax.swing.JLabel();
+        imgInicio = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        content.add(imgBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
 
-        Opciones.setText("Opciones");
-        Menu.add(Opciones);
+        ItBarra.setMaximum(101);
+        content.add(ItBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 540, 30));
 
-        Creditos.setText("Creditos");
-        Menu.add(Creditos);
+        txtMensaje.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        txtMensaje.setForeground(new java.awt.Color(0, 0, 0));
+        txtMensaje.setText("Cargando...");
+        content.add(txtMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 540, 30));
 
-        setJMenuBar(Menu);
+        imgInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/NutraPro.png"))); // NOI18N
+        content.add(imgInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,29 +111,29 @@ public class WinInicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(WinInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WinCarga.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(WinInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WinCarga.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(WinInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WinCarga.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(WinInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WinCarga.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new WinInicio().setVisible(true);
+                new WinCarga().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Creditos;
-    private javax.swing.JMenuBar Menu;
-    private javax.swing.JMenu Opciones;
+    private javax.swing.JProgressBar ItBarra;
     private javax.swing.JPanel content;
-    private javax.swing.JLabel imgBienvenido;
+    private javax.swing.JLabel imgInicio;
+    private javax.swing.JLabel txtMensaje;
     // End of variables declaration//GEN-END:variables
 }

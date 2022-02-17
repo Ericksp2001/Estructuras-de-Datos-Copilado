@@ -4,12 +4,6 @@
  */
 package CapaInterfaz;
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.Timer;
-import javax.swing.UIManager;
-
 /**
  *
  * @author Erick Perez
@@ -17,37 +11,12 @@ import javax.swing.UIManager;
 public class WinGeneral extends javax.swing.JFrame {
 
     /**
-     * Creates new form WinGeneral
+     * Creates new form WinInicio
      */
-    ActionListener ac;
-    int x=0;
-    Timer t;
-    
     public WinGeneral() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        this.setSize(600, 476);
-        ac=new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                x=x+1;
-                ItBarra.setValue(x);
-                if(ItBarra.getValue()==30){
-                    txtMensaje.setText("Va progresando...");
-                }
-                if(ItBarra.getValue()==70){
-                    txtMensaje.setText("Ya mismo termina...");
-                }
-                if(ItBarra.getValue()==100){
-                    WinInicio b = new WinInicio();
-                    b.setVisible(true);
-                    dispose();
-                }
-            }
-        };
-        t=new Timer(50,ac);
-        t.start();
-        UIManager.put("nimbusOrange", new Color(0, 160, 230));
+        setLocationRelativeTo(null);
+        setSize(716, 548);
     }
 
     /**
@@ -60,26 +29,23 @@ public class WinGeneral extends javax.swing.JFrame {
     private void initComponents() {
 
         content = new javax.swing.JPanel();
-        ItBarra = new javax.swing.JProgressBar();
-        txtMensaje = new javax.swing.JLabel();
-        imgInicio = new javax.swing.JLabel();
+        imgBienvenido = new javax.swing.JLabel();
+        Menu = new javax.swing.JMenuBar();
+        Opciones = new javax.swing.JMenu();
+        Creditos = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(600, 476));
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        content.add(imgBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
 
-        ItBarra.setMaximum(101);
-        content.add(ItBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 540, 30));
+        Opciones.setText("Opciones");
+        Menu.add(Opciones);
 
-        txtMensaje.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        txtMensaje.setForeground(new java.awt.Color(0, 0, 0));
-        txtMensaje.setText("Cargando...");
-        content.add(txtMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 540, 30));
+        Creditos.setText("Creditos");
+        Menu.add(Creditos);
 
-        imgInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/NutraPro.png"))); // NOI18N
-        content.add(imgInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        setJMenuBar(Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,6 +87,7 @@ public class WinGeneral extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(WinGeneral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -131,9 +98,10 @@ public class WinGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar ItBarra;
+    private javax.swing.JMenu Creditos;
+    private javax.swing.JMenuBar Menu;
+    private javax.swing.JMenu Opciones;
     private javax.swing.JPanel content;
-    private javax.swing.JLabel imgInicio;
-    private javax.swing.JLabel txtMensaje;
+    private javax.swing.JLabel imgBienvenido;
     // End of variables declaration//GEN-END:variables
 }
