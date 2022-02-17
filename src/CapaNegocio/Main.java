@@ -10,7 +10,6 @@ package CapaNegocio;
  */
 public class Main {
    public void Saludo(){
-       System.out.println("Holaaaa");
-       System.out.println("Esta es la segunda prueba");
+       System.out.println("Siuuuu pensemos como hacer la interfaz xd");
    }
 }
