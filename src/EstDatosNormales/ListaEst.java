@@ -4,6 +4,8 @@
  */
 package EstDatosNormales;
 
+import ClsVeterinaria.ClsVeterinaria;
+
 /**
  * 20/12/2021
  * @author Erick Perez
@@ -12,18 +14,18 @@ public class ListaEst {
     //Atributos
     private int _max;
     private int _numEle;
-    private RegLibro[] _libreria;
+    private ClsVeterinaria[] _registro;
 
     //Constructor
     public ListaEst(int max) {
         this._max = max;
         this._numEle = 0;
-        this._libreria = new RegLibro[this._max];
+        this._registro = new ClsVeterinaria[this._max];
     }
     public ListaEst() {
         this._max = 10;
         this._numEle = 0;
-        this._libreria = new RegLibro[this._max];
+        this._registro = new ClsVeterinaria[this._max];
     }
 
     //Getter and Setter
@@ -43,20 +45,20 @@ public class ListaEst {
         this._numEle = numEle;
     }
 
-    public RegLibro[] libreria() {
-        return _libreria;
+    public ClsVeterinaria[] registro() {
+        return _registro;
     }
 
-    public void libreria(RegLibro[] cine) {
-        this._libreria = cine;
+    public void registro(ClsVeterinaria[] cine) {
+        this._registro = cine;
     }
     
-    public RegLibro libreria(int pos) {
-        return _libreria[pos];
+    public ClsVeterinaria registro(int pos) {
+        return _registro[pos];
     }
 
-    public void cine(int pos,RegLibro c) {
-        this._libreria[pos] = c;
+    public void cine(int pos,ClsVeterinaria c) {
+        this._registro[pos] = c;
     }
    
     //---------------------------------------------------------------------------------------------------//
@@ -64,27 +66,27 @@ public class ListaEst {
     public void recorrer(int posicion, boolean derecha){
         if(derecha){      //si es verdadero, entonces se recorre a la derecha        (Si se agrega elementos)
             for(int i=this._numEle; i>=posicion; i--){
-                this._libreria[i]=this._libreria[i-1];
+                this._registro[i]=this._registro[i-1];
             }
         }else{          //Si es false, entonces se recorre a la izquierda         (Si se elimina elementos)
             for(int i=posicion; i<=this._numEle; i++){
-                this._libreria[i-1]=this._libreria[i];
+                this._registro[i-1]=this._registro[i];
                 if(i==this._numEle){
-                    this._libreria[i-1]=null;
+                    this._registro[i-1]=null;
                 }
             }
         }
     }
     //---------------------------------------------------------------------------------------------------//
     //Funcion para colocar elementos a al lista, devuelve falso si la lista esta llena
-    public boolean poner(int posicion, RegLibro pelicula){
+    public boolean poner(int posicion,ClsVeterinaria registro){
         boolean resp=true;
         if(this._numEle<this._max){
             if(posicion>this._numEle){
-                this._libreria[this._numEle]=pelicula;
+                this._registro[this._numEle]=registro;
             }else{
                 recorrer(posicion, true);
-                this._libreria[posicion-1]=pelicula;
+                this._registro[posicion-1]=registro;
             }
             this._numEle++;
         }else{
@@ -114,59 +116,61 @@ public class ListaEst {
     public String toString(){
         String texto="";
         for(int i=0; i<this._numEle; i++){
-            texto+= i+1 +".-\t"+this._libreria[i].toString()+"\n";
+            texto+= i+1 +".-\t"+this._registro[i].toString()+"\n";
         }
         return texto;
     }
     //---------------------------------------------------------------------------------------------------//
     //Funcion para buscar elementos en la lista en funcion del titulo
-    public String buscarTitulo(String dato){
+    public String buscarMascota(String dato){
         String titulo="";
         for(int i=0; i<this._numEle; i++){
-            if(this._libreria[i].getTitulo().equals(dato)){
-                titulo+=i+1 +".-\t"+this._libreria[i].toString()+"\n";
+            if(this._registro[i].NombreMascota().equals(dato)){
+                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
             }
         }
         return titulo;
     }
     //Funcion para buscar elementos en la lista en funcion del autor
-    public String buscarAutor(String dato){
+    public String buscarDueño(String dato){
         String titulo="";
         for(int i=0; i<this._numEle; i++){
-            if(this._libreria[i].getAutor().equals(dato)){
-                titulo+=i+1 +".-\t"+this._libreria[i].toString()+"\n";
+            if(this._registro[i].NombreDueño().equals(dato)){
+                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
             }
         }
         return titulo;
     }
     //Funcion para buscar elementos en la lista en funcion del isbn
-    public String buscarIsbn(int dato){
+    public String buscarRaza(String dato){
         String titulo="";
         for(int i=0; i<this._numEle; i++){
-            if(this._libreria[i].getIsbn()==dato){
-                titulo+=i+1 +".-\t"+this._libreria[i].toString()+"\n";
+            if(this._registro[i].RazaMascota().equals(dato)){
+                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
             }
         }
         return titulo;
     }
     //Funcion para buscar elementos en la lista en funcion del precio
-    public String buscarPrecio(int dato){
+      public String buscarIdDueño(String dato){
         String titulo="";
         for(int i=0; i<this._numEle; i++){
-            if(this._libreria[i].getPrecio()==dato){
-                titulo+=i+1 +".-\t"+this._libreria[i].toString()+"\n";
+            if(this._registro[i].IdDueño().equals(dato)){
+                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
             }
         }
         return titulo;
     }
+ 
     //Funcion para buscar elementos en la lista en funcion de la posicion
     public String buscarPosicion(int dato){
         String titulo="";
         for(int i=0; i<this._numEle; i++){
             if(i==dato){
-                titulo+=i+1 +".-\t"+this._libreria[i].toString()+"\n";
+                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
             }
         }
         return titulo;
     }
+    
 }

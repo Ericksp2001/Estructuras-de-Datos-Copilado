@@ -5,6 +5,7 @@
 package EstListaEstatica;
 
 
+import ClsVeterinaria.ClsVeterinaria;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
@@ -16,25 +17,25 @@ public class listaEstatica {
  
     private int _max;
     private int _numeroElementos;
-    public RegistroMusica _musica[];
+    public ClsVeterinaria _registro[];
 
 
     public listaEstatica(int max) {
         this._max = max;
         this._numeroElementos =0;
-        this._musica =new RegistroMusica[this._max];
+        this._registro =new ClsVeterinaria[this._max];
     }
     
     public listaEstatica() {
         this._max = 10;
         this._numeroElementos =0;
-        this._musica =new RegistroMusica[this._max];
+        this._registro =new ClsVeterinaria[this._max];
     }
 
       public listaEstatica(listaEstatica nueva) {
         this._max = nueva._max;
         this._numeroElementos =nueva._numeroElementos;
-        this._musica =nueva._musica;
+        this._registro =nueva._registro;
     }
 
     
@@ -54,36 +55,36 @@ public class listaEstatica {
         this._numeroElementos = numeroElementos;
     }
 
-    public RegistroMusica[] getMusica() {
-        return _musica;
+    public ClsVeterinaria[] getRegistro() {
+        return _registro;
     }
 
-    public void Musica(RegistroMusica[] musica) {
-        this._musica = musica;
+    public void Musica(ClsVeterinaria[] registroVet) {
+        this._registro = registroVet;
     }
     
     
-    public RegistroMusica Musica(int pos) {
-        return _musica[pos];
+    public ClsVeterinaria Registro(int pos) {
+        return _registro[pos];
     }
 
-    public void setMusica(int posicion,RegistroMusica c) {
-        this._musica[posicion] = c;
+    public void setMusica(int posicion,ClsVeterinaria c) {
+        this._registro[posicion] = c;
     }
     
     public void recorrer (int posicion,boolean derecha){
         
        if(derecha){
            for(int i=this._numeroElementos;i>=posicion;i--){
-               this._musica[i]=this._musica[i-1];
+               this._registro[i]=this._registro[i-1];
                
            }
        }else{
            
            for(int i=posicion;i<=this._numeroElementos;i++){
-              this._musica[i-1]=this._musica[i];
+              this._registro[i-1]=this._registro[i];
                if(i==this._numeroElementos){
-                   this._musica[i-1]=null;
+                   this._registro[i-1]=null;
                    
                }
                
@@ -100,15 +101,15 @@ public class listaEstatica {
         
        if(derecha){
            for(int i=this._numeroElementos;i>posicion;i--){
-               this._musica[i]=this._musica[i-1];
+               this._registro[i]=this._registro[i-1];
                
            }
        }else{
            
            for(int i=posicion;i<this._numeroElementos;i++){
-              this._musica[i-1]=this._musica[i];
+              this._registro[i-1]=this._registro[i];
                if(i==this._numeroElementos){
-                   this._musica[i-1]=null;
+                   this._registro[i-1]=null;
                    
                }
                
@@ -121,16 +122,16 @@ public class listaEstatica {
     
     
     
-    public boolean agregar(int posicion,RegistroMusica cancion){
+    public boolean agregar(int posicion,ClsVeterinaria cancion){
           
         boolean respuesta=true;
         if(this._numeroElementos<this._max){
             if(posicion>this._numeroElementos){
-                this._musica[this._numeroElementos]=cancion; 
+                this._registro[this._numeroElementos]=cancion; 
             JOptionPane.showMessageDialog(null,"Registrado con exito");
             }else{
                 recorrer(posicion,true);
-                this._musica[posicion-1]=cancion;
+                this._registro[posicion-1]=cancion;
             JOptionPane.showMessageDialog(null,"Registrado con exito");
             }
             this._numeroElementos++;
@@ -168,7 +169,7 @@ public class listaEstatica {
         String texto="";
         for(int i=0;i<this._numeroElementos;i++){
             
-            texto+=i+1+".-\t"+this._musica[i].toString();   
+            texto+=i+1+".-\t"+this._registro[i].toString();   
         }
         
         return texto;
@@ -176,12 +177,12 @@ public class listaEstatica {
     }
     
     
-    public String buscarTitulo(String dato){
+    public String buscarMascota(String dato){
         
         String titulo="";
         for(int i=0;i<this._numeroElementos;i++){
-            if(this._musica[i].getCancion().equals(dato)){
-                titulo+=i+1+".-\n"+this._musica[i].toString();
+            if(this._registro[i].NombreMascota().equals(dato)){
+                titulo+=i+1+".-\n"+this._registro[i].toString();
                
             }
         }
@@ -189,12 +190,12 @@ public class listaEstatica {
     }
     
     
-       public String buscarArtista(String dato){
+       public String buscarDueño(String dato){
         
         String titulo="";
         for(int i=0;i<this._numeroElementos;i++){
-            if(this._musica[i].getCantante().equals(dato)){
-                titulo+=i+1+".-\n"+this._musica[i].toString();  
+            if(this._registro[i].NombreDueño().equals(dato)){
+                titulo+=i+1+".-\n"+this._registro[i].toString();  
             }
         }
        return titulo; 
@@ -202,59 +203,16 @@ public class listaEstatica {
     
        
        
-      public String buscarAlbum(String dato){
+      public String buscarRaza(String dato){
         
         String titulo="";
         for(int i=0;i<this._numeroElementos;i++){
-            if(this._musica[i].getAlbum().equals(dato)){
-                titulo+=i+1+".-\n"+this._musica[i].toString();  
+            if(this._registro[i].RazaMascota().equals(dato)){
+                titulo+=i+1+".-\n"+this._registro[i].toString();  
             }
         }
-       return titulo; 
-    }
-      
-        
-      public String buscarDuracion(String dato){
-        
-        String titulo="";
-        for(int i=0;i<this._numeroElementos;i++){
-            if(this._musica[i].getDuracion().equals(dato)){
-                titulo+=i+1+".-\n"+this._musica[i].toString();  
-            }
-        }
-       return titulo; 
-    }
-    
-      
-            public String buscarGenero(String dato){
-        
-        String titulo="";
-        for(int i=0;i<this._numeroElementos;i++){
-            if(this._musica[i].getGenero().equals(dato)){
-                titulo+=i+1+".-\n"+this._musica[i].toString();  
-            }
-        }
-       return titulo; 
-    }
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+return titulo;    
     
 }
+      }

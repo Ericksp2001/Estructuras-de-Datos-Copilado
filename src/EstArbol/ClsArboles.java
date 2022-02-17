@@ -40,7 +40,7 @@ public class ClsArboles {
         if (this._nodos==0) {
             _raiz = nuevo;
         } else {
-            if (nuevo.getInf().getPrecio() <= pivote.getInf().getPrecio()) {
+            if (nuevo.getInf().CostoFactura() <= pivote.getInf().CostoFactura()) {
                 if (pivote.getIzq() == null) {
                     pivote.setIzq(nuevo);
                 } else {
@@ -91,7 +91,7 @@ public class ClsArboles {
         if (aux != null) {
             postorden(aux.getIzq(), recorrido);
             postorden(aux.getDer(), recorrido);
-            recorrido.add(aux.getInf().getPrecio()+" - ");
+            recorrido.add(aux.getInf().CostoFactura()+" - ");
         }
     }
     
@@ -118,7 +118,7 @@ public class ClsArboles {
      */
     private void preOrden(ClsNodo reco, ArrayList contenedor) {
         if (reco != null) {
-            contenedor.add(reco.getInf().getPrecio()+ " - ");
+            contenedor.add(reco.getInf().CostoFactura()+ " - ");
             preOrden(reco.getIzq(),contenedor);
             preOrden(reco.getDer(),contenedor);
         }
@@ -148,7 +148,7 @@ public class ClsArboles {
     private void inOrden(ClsNodo orde,ArrayList contenedor) {
         if (orde != null) {
             inOrden(orde.getIzq(),contenedor);
-            contenedor.add(orde.getInf().getPrecio() + " - ");
+            contenedor.add(orde.getInf().CostoFactura() + " - ");
             inOrden(orde.getDer(),contenedor);
         }
     }
