@@ -4,6 +4,8 @@
  */
 package EstDatosNormales;
 
+import EstVeterinaria.ClsVeterinaria;
+
 /**
  * 20/12/2021
  * @author Erick Perez
@@ -25,8 +27,8 @@ public class PilaEst {
     public void Pila(ListaEst pila) {
         this._pila = pila;
     }
-    public boolean empilar( RegLibro libro){
-        return _pila.poner(1,libro);
+    public boolean empilar( ClsVeterinaria registroVet){
+        return _pila.poner(1,registroVet);
     }
     public boolean desempilar(){
         return _pila.sacar(1);

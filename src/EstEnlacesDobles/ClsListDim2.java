@@ -1,5 +1,8 @@
 
 package EstEnlacesDobles;
+
+import EstVeterinaria.ClsVeterinaria;
+
 /**
  *
  * @author Erick Perez
@@ -48,7 +51,7 @@ public class ClsListDim2 {
      * @param dato Objeto de tipo ClsAnimal que sera contenido en un nodo
      * @param izq Valor booleano que indica el extremo de la lista
      */
-    public void poner(int pos, ClsAnimal dato,boolean izq){
+    public void poner(int pos, ClsVeterinaria dato,boolean izq){
         ClsNodo2 nuevo =new ClsNodo2(dato);
         ClsNodo2 otro= new ClsNodo2();
         //Verificamos si se coloca en alguno de los dos extremos considerando una lista vacia
@@ -167,7 +170,7 @@ public class ClsListDim2 {
         ClsNodo2 aux= new ClsNodo2();
         aux.enlder(_cabizq.enlder());
         for (int i = 0; i < _nelem; i++) {
-            if (clave.equalsIgnoreCase(aux.enlder().inf().getNombre())) {
+            if (clave.equalsIgnoreCase(aux.enlder().inf().NombreDueño())) {
                 resp = i;
             }
             aux = aux.enlder();

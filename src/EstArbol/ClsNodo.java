@@ -2,19 +2,21 @@
 
 package EstArbol;
 
+import EstVeterinaria.ClsVeterinaria;
+
 public class ClsNodo {
-    private ClsRecepcion  _inf;
+    private ClsVeterinaria  _inf;
     private ClsNodo _enlizq;
     private ClsNodo _enlder;
     
     public ClsNodo (){
-        _inf = new ClsRecepcion();
+        _inf = new ClsVeterinaria();
         _enlizq=null;
         _enlder=null;
     }
     
-    public ClsNodo(ClsRecepcion recep){
-        this._inf=recep;
+    public ClsNodo(ClsVeterinaria vet){
+        this._inf=vet;
     }
     
     public ClsNodo (ClsNodo dato){
@@ -36,11 +38,11 @@ public class ClsNodo {
     public ClsNodo getDer(){
         return _enlder;
     }
-     public void setInf(ClsRecepcion dato){
+     public void setInf(ClsVeterinaria dato){
         _inf=dato;
     }
     
-    public ClsRecepcion getInf(){
+    public ClsVeterinaria getInf(){
         return _inf;
     }
 }
