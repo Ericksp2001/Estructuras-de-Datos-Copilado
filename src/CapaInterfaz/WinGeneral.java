@@ -4,6 +4,9 @@
  */
 package CapaInterfaz;
 
+import javax.swing.JPanel;
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
+
 /**
  *
  * @author Erick Perez
@@ -32,14 +35,26 @@ public class WinGeneral extends javax.swing.JFrame {
         imgBienvenido = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         Opciones = new javax.swing.JMenu();
+        btnPacientes = new javax.swing.JMenuItem();
         Creditos = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        imgBienvenido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/Bienvenida.png"))); // NOI18N
         content.add(imgBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
 
         Opciones.setText("Opciones");
+
+        btnPacientes.setText("Pacientes");
+        btnPacientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPacientesActionPerformed(evt);
+            }
+        });
+        Opciones.add(btnPacientes);
+
         Menu.add(Opciones);
 
         Creditos.setText("Creditos");
@@ -60,6 +75,11 @@ public class WinGeneral extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacientesActionPerformed
+        WinPacientesListEst b = new WinPacientesListEst();
+        showPanel(b.getContent());
+    }//GEN-LAST:event_btnPacientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,11 +116,21 @@ public class WinGeneral extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void showPanel(JPanel p) {
+        p.setSize(720, 530);
+        p.setLocation(0, 0);
+        content.removeAll();
+        content.add(p, new AbsoluteConstraints(0, 0, -1, -1));
+        content.revalidate();
+        content.repaint();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Creditos;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JMenu Opciones;
+    private javax.swing.JMenuItem btnPacientes;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgBienvenido;
     // End of variables declaration//GEN-END:variables
