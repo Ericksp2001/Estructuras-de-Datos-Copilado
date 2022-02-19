@@ -4,6 +4,9 @@
  */
 package CapaInterfaz;
 
+
+
+import EstEnlacesDobles.ClsListDim2;
 import javax.swing.JPanel;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
@@ -13,13 +16,21 @@ import org.netbeans.lib.awtextra.AbsoluteConstraints;
  */
 public class WinGeneral extends javax.swing.JFrame {
 
-    /**
-     * Creates new form WinInicio
-     */
-    public WinGeneral() {
+  ClsListDim2 lista;
+  WinIngresosPila win1;
+  WinPacientesListEst win2;
+  
+    
+    public WinGeneral( ) {
         initComponents();
+        
+        
         setLocationRelativeTo(null);
         setSize(716, 548);
+        
+        
+        
+        
     }
 
     /**
@@ -35,6 +46,7 @@ public class WinGeneral extends javax.swing.JFrame {
         imgBienvenido = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         Opciones = new javax.swing.JMenu();
+        Ingreso = new javax.swing.JMenuItem();
         btnPacientes = new javax.swing.JMenuItem();
         Creditos = new javax.swing.JMenu();
 
@@ -43,9 +55,17 @@ public class WinGeneral extends javax.swing.JFrame {
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         imgBienvenido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/Bienvenida.png"))); // NOI18N
-        content.add(imgBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
+        content.add(imgBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 720, 530));
 
         Opciones.setText("Opciones");
+
+        Ingreso.setText("Ingreso");
+        Ingreso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresoActionPerformed(evt);
+            }
+        });
+        Opciones.add(Ingreso);
 
         btnPacientes.setText("Pacientes");
         btnPacientes.addActionListener(new java.awt.event.ActionListener() {
@@ -77,9 +97,15 @@ public class WinGeneral extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacientesActionPerformed
-        WinPacientesListEst b = new WinPacientesListEst();
-        showPanel(b.getContent());
+        win2 = new WinPacientesListEst(lista);
+        showPanel(win2.getContent());
     }//GEN-LAST:event_btnPacientesActionPerformed
+
+    private void IngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoActionPerformed
+       lista=new ClsListDim2(); 
+       win1=new WinIngresosPila(lista);
+        showPanel(win1.getContent());
+    }//GEN-LAST:event_IngresoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,6 +154,7 @@ public class WinGeneral extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Creditos;
+    private javax.swing.JMenuItem Ingreso;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JMenu Opciones;
     private javax.swing.JMenuItem btnPacientes;
