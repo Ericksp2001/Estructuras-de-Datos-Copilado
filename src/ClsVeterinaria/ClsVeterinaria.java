@@ -10,15 +10,15 @@ package ClsVeterinaria;
  */
 public class ClsVeterinaria {
    
-    String _NombreMascota;
-    String _RazaMascota;
-    String _SexoMascota;
-    int _EdadMascota;
-    Double _PesoMascota;
-    String _NombreDueño;
-    String _IdDueño;
-    String _Telefono;
-    Double _CostoFactura;
+    private String _NombreMascota;
+    private String _RazaMascota;
+    private String _SexoMascota;
+    private int _EdadMascota;
+    private Double _PesoMascota;
+    private String _NombreDueño;
+    private String _IdDueño;
+    private String _Telefono;
+    private Double _CostoFactura;
 
     public ClsVeterinaria() {
         _NombreMascota =null;

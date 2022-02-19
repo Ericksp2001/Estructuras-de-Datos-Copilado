@@ -37,14 +37,12 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         txtSalida = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        btnOrdenar = new javax.swing.JPanel();
-        txtOrdenar = new javax.swing.JLabel();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVisualizar.setBackground(new java.awt.Color(255, 255, 255));
+        btnVisualizar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVisualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -65,16 +63,17 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         btnVisualizar.setLayout(btnVisualizarLayout);
         btnVisualizarLayout.setHorizontalGroup(
             btnVisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(txtVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
         );
         btnVisualizarLayout.setVerticalGroup(
             btnVisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(txtVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
-        content.add(btnVisualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 200, 50));
+        content.add(btnVisualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 200, 50));
 
         btnSalida.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSalida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalida.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -95,14 +94,14 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         btnSalida.setLayout(btnSalidaLayout);
         btnSalidaLayout.setHorizontalGroup(
             btnSalidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(txtSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
         );
         btnSalidaLayout.setVerticalGroup(
             btnSalidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(txtSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
-        content.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 200, 50));
+        content.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 200, 50));
 
         jScrollPane2.setBackground(new java.awt.Color(102, 102, 102));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,40 +112,6 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         jScrollPane2.setViewportView(jTextArea1);
 
         content.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 290, 400));
-
-        jComboBox1.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Costo", "Peso" }));
-        content.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 190, 30));
-
-        btnOrdenar.setBackground(new java.awt.Color(255, 255, 255));
-        btnOrdenar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOrdenar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnOrdenarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnOrdenarMouseExited(evt);
-            }
-        });
-
-        txtOrdenar.setBackground(new java.awt.Color(255, 255, 255));
-        txtOrdenar.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        txtOrdenar.setForeground(new java.awt.Color(0, 0, 0));
-        txtOrdenar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtOrdenar.setText("Ordenar");
-
-        javax.swing.GroupLayout btnOrdenarLayout = new javax.swing.GroupLayout(btnOrdenar);
-        btnOrdenar.setLayout(btnOrdenarLayout);
-        btnOrdenarLayout.setHorizontalGroup(
-            btnOrdenarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtOrdenar, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-        );
-        btnOrdenarLayout.setVerticalGroup(
-            btnOrdenarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtOrdenar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        content.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 200, 50));
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
@@ -183,30 +148,17 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         txtSalida.setForeground(Color.BLACK);
     }//GEN-LAST:event_btnSalidaMouseExited
 
-    private void btnOrdenarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrdenarMouseEntered
-        btnOrdenar.setBackground(new Color(0, 160, 230));
-        txtOrdenar.setForeground(Color.WHITE);
-    }//GEN-LAST:event_btnOrdenarMouseEntered
-
-    private void btnOrdenarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrdenarMouseExited
-        btnOrdenar.setBackground(Color.WHITE);
-        txtOrdenar.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnOrdenarMouseExited
-
     public JPanel getContent() {
         return content;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnOrdenar;
     private javax.swing.JPanel btnSalida;
     private javax.swing.JPanel btnVisualizar;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel txtOrdenar;
     private javax.swing.JLabel txtSalida;
     private javax.swing.JLabel txtVisualizar;
     // End of variables declaration//GEN-END:variables
