@@ -53,10 +53,6 @@ public class WinIngresosPila extends javax.swing.JPanel {
 
         Group1 = new javax.swing.ButtonGroup();
         content = new javax.swing.JPanel();
-        btnIngresar = new javax.swing.JPanel();
-        txtIngresar = new javax.swing.JLabel();
-        btnEliminar = new javax.swing.JPanel();
-        txtEliminar = new javax.swing.JLabel();
         cmpRaza = new javax.swing.JTextField();
         cmpNombreM = new javax.swing.JTextField();
         cmpNombreD = new javax.swing.JTextField();
@@ -79,85 +75,11 @@ public class WinIngresosPila extends javax.swing.JPanel {
         btnHembra = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListInf = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnIngresar.setBackground(new java.awt.Color(255, 255, 255));
-        btnIngresar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnIngresarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnIngresarMouseExited(evt);
-            }
-        });
-
-        txtIngresar.setBackground(new java.awt.Color(255, 255, 255));
-        txtIngresar.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        txtIngresar.setForeground(new java.awt.Color(0, 0, 0));
-        txtIngresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtIngresar.setText("Ingresar");
-        txtIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtIngresarMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnIngresarLayout = new javax.swing.GroupLayout(btnIngresar);
-        btnIngresar.setLayout(btnIngresarLayout);
-        btnIngresarLayout.setHorizontalGroup(
-            btnIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        btnIngresarLayout.setVerticalGroup(
-            btnIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-        );
-
-        content.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, 130, 50));
-
-        btnEliminar.setBackground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnEliminarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnEliminarMouseExited(evt);
-            }
-        });
-
-        txtEliminar.setBackground(new java.awt.Color(255, 255, 255));
-        txtEliminar.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        txtEliminar.setForeground(new java.awt.Color(0, 0, 0));
-        txtEliminar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtEliminar.setText("Eliminar");
-        txtEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtEliminarMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnEliminarLayout = new javax.swing.GroupLayout(btnEliminar);
-        btnEliminar.setLayout(btnEliminarLayout);
-        btnEliminarLayout.setHorizontalGroup(
-            btnEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnEliminarLayout.createSequentialGroup()
-                .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        btnEliminarLayout.setVerticalGroup(
-            btnEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnEliminarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        content.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 140, 50));
         content.add(cmpRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 100, -1));
         content.add(cmpNombreM, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 100, -1));
         content.add(cmpNombreD, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 120, -1));
@@ -233,6 +155,40 @@ public class WinIngresosPila extends javax.swing.JPanel {
 
         content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 170, 360));
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella1.png"))); // NOI18N
+        jButton1.setText("INGRESAR");
+        jButton1.setContentAreaFilled(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella1.png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella2.png"))); // NOI18N
+        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        content.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 120, 100));
+
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(0, 0, 0));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella3.png"))); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setContentAreaFilled(false);
+        btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella3.png"))); // NOI18N
+        btnEliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella4.png"))); // NOI18N
+        btnEliminar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        content.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 120, 100));
+
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
 
@@ -248,32 +204,12 @@ public class WinIngresosPila extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIngresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseEntered
-        btnIngresar.setBackground(new Color(0, 160, 230));
-        txtIngresar.setForeground(Color.WHITE);
-    }//GEN-LAST:event_btnIngresarMouseEntered
-
-    private void btnIngresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseExited
-        btnIngresar.setBackground(Color.WHITE);
-        txtIngresar.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnIngresarMouseExited
-
-    private void btnEliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseEntered
-        btnEliminar.setBackground(new Color(0, 160, 230));
-        txtEliminar.setForeground(Color.WHITE);
-    }//GEN-LAST:event_btnEliminarMouseEntered
-
-    private void btnEliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseExited
-        btnEliminar.setBackground(Color.WHITE);
-        txtEliminar.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnEliminarMouseExited
-
     private void cmpPosicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmpPosicionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmpPosicionActionPerformed
 
-    private void txtIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIngresarMouseClicked
-         datos= new ClsVeterinaria();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  datos= new ClsVeterinaria();
            try {
                aux=lista.cabizq();
             if (lista.Buscar(cmpId.getText()) > -1) {
@@ -312,32 +248,28 @@ public class WinIngresosPila extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Verificar los datos");
         }
 
-    }//GEN-LAST:event_txtIngresarMouseClicked
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txtEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEliminarMouseClicked
-   
-            
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         try {
 
             if (lista.sacar(ListInf.getSelectedIndex() + 1, true) == true) {
                 JOptionPane.showMessageDialog(null, "Usuario sacado exitosamente");
                 lista1.clear();
-                 ClsNodo2 aux = lista.cabizq().enlder();
-                 listar();
-              
+                ClsNodo2 aux = lista.cabizq().enlder();
+                listar();
+
             } else {
 
                 JOptionPane.showMessageDialog(null, "El Registro no existe");
 
             }
-           
-           
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Verificar los datos");
         }
-                                              
 
-    }//GEN-LAST:event_txtEliminarMouseClicked
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     public JPanel getContent() {
         return content;
@@ -346,9 +278,8 @@ public class WinIngresosPila extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Group1;
     private javax.swing.JList<String> ListInf;
-    private javax.swing.JPanel btnEliminar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JRadioButton btnHembra;
-    private javax.swing.JPanel btnIngresar;
     private javax.swing.JRadioButton btnMacho;
     private javax.swing.JTextField cmpCosto;
     private javax.swing.JTextField cmpEdad;
@@ -361,13 +292,12 @@ public class WinIngresosPila extends javax.swing.JPanel {
     private javax.swing.JTextField cmpTelefono;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel txtCosto;
     private javax.swing.JLabel txtEdad;
-    private javax.swing.JLabel txtEliminar;
     private javax.swing.JLabel txtId;
-    private javax.swing.JLabel txtIngresar;
     private javax.swing.JLabel txtNomDue;
     private javax.swing.JLabel txtNomMas;
     private javax.swing.JLabel txtPeso;
