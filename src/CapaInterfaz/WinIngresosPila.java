@@ -59,7 +59,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
         txtRaza = new javax.swing.JLabel();
         txtNomDue = new javax.swing.JLabel();
         txtNomMas = new javax.swing.JLabel();
-        cmpPeso = new javax.swing.JTextField();
+        cmpFechaIngreso = new javax.swing.JTextField();
         txtPeso = new javax.swing.JLabel();
         cmpEdad = new javax.swing.JTextField();
         txtEdad = new javax.swing.JLabel();
@@ -98,18 +98,18 @@ public class WinIngresosPila extends javax.swing.JPanel {
         txtNomMas.setForeground(new java.awt.Color(0, 0, 0));
         txtNomMas.setText("Nombre Mascota:");
         content.add(txtNomMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 20));
-        content.add(cmpPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 100, -1));
+        content.add(cmpFechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 100, -1));
 
         txtPeso.setBackground(new java.awt.Color(0, 0, 0));
         txtPeso.setForeground(new java.awt.Color(0, 0, 0));
-        txtPeso.setText("Peso Mascota:");
-        content.add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 20));
-        content.add(cmpEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 100, -1));
+        txtPeso.setText("Fecha Ingreso:");
+        content.add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, 20));
+        content.add(cmpEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 100, -1));
 
         txtEdad.setBackground(new java.awt.Color(0, 0, 0));
         txtEdad.setForeground(new java.awt.Color(0, 0, 0));
         txtEdad.setText("Edad:");
-        content.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, 20));
+        content.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, 20));
 
         txtTelefono.setBackground(new java.awt.Color(0, 0, 0));
         txtTelefono.setForeground(new java.awt.Color(0, 0, 0));
@@ -220,7 +220,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
                 datos.EdadMascota(Integer.parseInt(cmpEdad.getText()));
                 datos.IdDueño(cmpId.getText());
                 datos.NombreDueño(cmpNombreD.getText());
-                datos.PesoMascota(Double.parseDouble(cmpPeso.getText()));
+                datos.FechaIngreso(cmpFechaIngreso.getText());
                 datos.RazaMascota(cmpRaza.getText());
                 datos.SexoMascota();
                 datos.Telefono(cmpTelefono.getText());
@@ -237,7 +237,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
                 cmpEdad.setText(null);
                 cmpId.setText(null);
                 cmpNombreD.setText(null);
-                cmpPeso.setText(null);
+                cmpFechaIngreso.setText(null);
                 cmpRaza.setText(null);
                 cmpTelefono.setText(null);
                 cmpPosicion.setText(null);
@@ -283,10 +283,10 @@ public class WinIngresosPila extends javax.swing.JPanel {
     private javax.swing.JRadioButton btnMacho;
     private javax.swing.JTextField cmpCosto;
     private javax.swing.JTextField cmpEdad;
+    private javax.swing.JTextField cmpFechaIngreso;
     private javax.swing.JTextField cmpId;
     private javax.swing.JTextField cmpNombreD;
     private javax.swing.JTextField cmpNombreM;
-    private javax.swing.JTextField cmpPeso;
     private javax.swing.JTextField cmpPosicion;
     private javax.swing.JTextField cmpRaza;
     private javax.swing.JTextField cmpTelefono;

@@ -14,7 +14,7 @@ public class ClsVeterinaria {
     private String _RazaMascota;
     private String _SexoMascota;
     private int _EdadMascota;
-    private Double _PesoMascota;
+    private String _FechaIngreso;
     private String _NombreDueño;
     private String _IdDueño;
     private String _Telefono;
@@ -25,19 +25,19 @@ public class ClsVeterinaria {
         _RazaMascota =null;
         _SexoMascota =null;
         _EdadMascota = 0;
-        _PesoMascota =0.00;
+        _FechaIngreso =null;
         _NombreDueño = null;
         _IdDueño = null;
         _Telefono = null;
         _CostoFactura = 0.00;
     }
 
-    public ClsVeterinaria(String _NombreMascota, String _RazaMascota, String _SexoMascota, int _EdadMascota, Double _PesoMascota, String _NombreDueño, String _IdDueño, String _Telefono, Double _CostoFactura) {
+    public ClsVeterinaria(String _NombreMascota, String _RazaMascota, String _SexoMascota, int _EdadMascota, String _FechaIngreso, String _NombreDueño, String _IdDueño, String _Telefono, Double _CostoFactura) {
         this._NombreMascota = _NombreMascota;
         this._RazaMascota = _RazaMascota;
         this._SexoMascota = _SexoMascota;
         this._EdadMascota = _EdadMascota;
-        this._PesoMascota = _PesoMascota;
+        this._FechaIngreso= _FechaIngreso;
         this._NombreDueño = _NombreDueño;
         this._IdDueño = _IdDueño;
         this._Telefono = _Telefono;
@@ -76,13 +76,15 @@ public class ClsVeterinaria {
         this._EdadMascota = _EdadMascota;
     }
 
-    public Double PesoMascota() {
-        return _PesoMascota;
+    public String FechaIngreso() {
+        return _FechaIngreso;
     }
 
-    public void PesoMascota(Double _PesoMascota) {
-        this._PesoMascota = _PesoMascota;
+    public void FechaIngreso(String _FechaIngreso) {
+        this._FechaIngreso = _FechaIngreso;
     }
+
+
 
     public String NombreDueño() {
         return _NombreDueño;
