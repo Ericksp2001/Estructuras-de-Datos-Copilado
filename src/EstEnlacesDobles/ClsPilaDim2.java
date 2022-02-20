@@ -56,7 +56,11 @@ public class ClsPilaDim2 {
         return _Pila.Buscar(clave);
     }
     
-       public String listar(){
-        return _Pila.listar();
+       public String listar1(){
+        return _Pila.listar1();
+    }
+       
+        public String listar2(){
+        return _Pila.listar2();
     }
 }

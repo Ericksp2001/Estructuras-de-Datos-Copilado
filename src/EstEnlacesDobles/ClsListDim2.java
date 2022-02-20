@@ -179,18 +179,51 @@ public class ClsListDim2 {
         return resp;
     }
     
-           public String listar(){
+           public String listar1(){
         String informacion="";
         _aux = cabizq();
         _aux=_aux.enlder();
+    
         for (int i = 0; i <nelem(); i++) {
-          informacion+=_aux.inf().NombreDueño()+ "                  "
-        + _aux.inf().IdDueño()+ "           " +_aux.inf().FechaIngreso()+"\n";
+          informacion+=_aux.inf().NombreMascota()+"\t"+_aux.inf().NombreDueño()
+          +"\t"+_aux.inf().FechaIngreso()+"\n";
           _aux = _aux.enlder();
         }
-        return informacion;
+        return toString1()+informacion;
+    }
+
+           
+                public String listar2(){
+        String informacion="";
+        _aux = cabizq();
+        _aux=_aux.enlder();
+    
+        for (int i = 0; i <nelem(); i++) {
+          informacion+=_aux.inf().NombreDueño()+"\t"+_aux.inf().IdDueño()+"\n";
+          _aux = _aux.enlder();
+        }
+        return toString2()+informacion;
+    }
+
+           
+           
+    public String toString1() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Nombre Mascota"+"\t"+"Nombre Dueño"+"\t"+"Fecha Ingreso"+"\n");
+        return sb.toString();
     }
    
+    
+  
+    public String toString2() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Nombre Dueño"+"\t"+"ID Dueño"+"\n");
+        return sb.toString();
+    }
+   
+     
+           
+     
    
     
    

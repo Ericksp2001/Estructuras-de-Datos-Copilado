@@ -160,7 +160,7 @@ public class WinPacientesListEst extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSalidaMouseExited
 
     private void txtVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVisualizarMouseClicked
-    txtArea.setText(pila.listar());
+    txtArea.setText(pila.listar1());
     }//GEN-LAST:event_txtVisualizarMouseClicked
 
     public JPanel getContent() {

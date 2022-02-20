@@ -24,11 +24,11 @@ public class WinIngresosPila extends javax.swing.JPanel {
     ClsPilaDim2 pila;
     ClsNodo2 aux=new ClsNodo2(); 
     ClsVeterinaria datos;
-    private DefaultListModel lista1 = new DefaultListModel();
+
     
     public WinIngresosPila(ClsPilaDim2 pil) {
         initComponents();
-        ListInf.setModel(lista1);
+   
         this.pila=pil;
         setSize(720, 530);
     }
@@ -60,10 +60,10 @@ public class WinIngresosPila extends javax.swing.JPanel {
         cmpCosto = new javax.swing.JTextField();
         btnMacho = new javax.swing.JRadioButton();
         btnHembra = new javax.swing.JRadioButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ListInf = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtArea = new javax.swing.JTextArea();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -126,10 +126,6 @@ public class WinIngresosPila extends javax.swing.JPanel {
         btnHembra.setText("Hembra");
         content.add(btnHembra, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
 
-        jScrollPane1.setViewportView(ListInf);
-
-        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 210, 360));
-
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella1.png"))); // NOI18N
@@ -164,6 +160,12 @@ public class WinIngresosPila extends javax.swing.JPanel {
         });
         content.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 120, 100));
 
+        txtArea.setColumns(20);
+        txtArea.setRows(5);
+        jScrollPane2.setViewportView(txtArea);
+
+        content.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, 330));
+
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
 
@@ -197,7 +199,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
                 if(btnMacho.isSelected()){
                 datos.SexoMascota(btnMacho.getText());
                 }else{
-                datos.SexoMascota(btnMacho.getText());    
+                datos.SexoMascota(btnHembra.getText());    
                 }
                 pila.Poner(datos);
                 JOptionPane.showMessageDialog(null, "Registro Procesado exitosamente");
@@ -210,7 +212,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
                 cmpFechaIngreso.setText(null);
                 cmpRaza.setText(null);
                 cmpTelefono.setText(null);
-                
+                txtArea.setText(pila.listar2());
                 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Verificar los datos");
@@ -222,9 +224,11 @@ public class WinIngresosPila extends javax.swing.JPanel {
         try {
 
             if (pila.Sacar() == true) {
+                
                 JOptionPane.showMessageDialog(null, "Usuario sacado exitosamente");
-           
-
+                 txtArea.setText(pila.listar2());
+  
+       
             } else {
 
                 JOptionPane.showMessageDialog(null, "El Registro no existe");
@@ -243,7 +247,6 @@ public class WinIngresosPila extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Group1;
-    private javax.swing.JList<String> ListInf;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JRadioButton btnHembra;
     private javax.swing.JRadioButton btnMacho;
@@ -258,7 +261,8 @@ public class WinIngresosPila extends javax.swing.JPanel {
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea txtArea;
     private javax.swing.JLabel txtCosto;
     private javax.swing.JLabel txtEdad;
     private javax.swing.JLabel txtId;
