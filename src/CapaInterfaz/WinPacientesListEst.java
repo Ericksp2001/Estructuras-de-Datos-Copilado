@@ -131,7 +131,7 @@ public class WinPacientesListEst extends javax.swing.JPanel {
 
         jScrollPane2.setViewportView(ListInf);
 
-        content.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 350, 380));
+        content.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 350, 380));
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));

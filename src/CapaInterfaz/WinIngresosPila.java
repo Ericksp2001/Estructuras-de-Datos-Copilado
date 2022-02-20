@@ -26,10 +26,11 @@ public class WinIngresosPila extends javax.swing.JPanel {
     ClsVeterinaria datos;
     private DefaultListModel lista1 = new DefaultListModel();
     
-    public WinIngresosPila(   ClsListDim2 list) {
+    public WinIngresosPila(ClsListDim2 list, ClsVeterinaria data) {
         initComponents();
         ListInf.setModel(lista1);
         this.lista=list;
+        this.datos=data;
         setSize(720, 530);
     }
 
@@ -41,7 +42,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
         aux=aux.enlder();
         for (int i = 0; i < lista.nelem(); i++) {
             lista1.addElement((i + 1) + "           " + aux.inf().NombreDueño()+ "                  "
-                + aux.inf().IdDueño());
+                + aux.inf().IdDueño()+ "           " +aux.inf().FechaIngreso());
             aux = aux.enlder();
         }
     }

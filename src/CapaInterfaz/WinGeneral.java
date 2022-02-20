@@ -6,6 +6,7 @@ package CapaInterfaz;
 
 
 
+import ClsVeterinaria.ClsVeterinaria;
 import EstEnlacesDobles.ClsListDim2;
 import javax.swing.JPanel;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
@@ -19,7 +20,7 @@ public class WinGeneral extends javax.swing.JFrame {
   ClsListDim2 lista;
   WinIngresosPila win1;
   WinPacientesListEst win2;
-  
+  ClsVeterinaria info;
     
     public WinGeneral( ) {
         initComponents();
@@ -103,7 +104,8 @@ public class WinGeneral extends javax.swing.JFrame {
 
     private void IngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoActionPerformed
        lista=new ClsListDim2(); 
-       win1=new WinIngresosPila(lista);
+       info=new ClsVeterinaria();
+       win1=new WinIngresosPila(lista,info);
         showPanel(win1.getContent());
     }//GEN-LAST:event_IngresoActionPerformed
 
