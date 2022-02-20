@@ -8,6 +8,7 @@ package CapaInterfaz;
 import ClsVeterinaria.ClsVeterinaria;
 import EstEnlacesDobles.ClsListDim2;
 import EstEnlacesDobles.ClsNodo2;
+import EstEnlacesDobles.ClsPilaDim2;
 
 import java.awt.Color;
 import javax.swing.DefaultListModel;
@@ -19,33 +20,21 @@ import javax.swing.JPanel;
  */
 public class WinPacientesListEst extends javax.swing.JPanel {
 
-    ClsListDim2 lista;
+    ClsPilaDim2 pila;
     ClsNodo2 aux=new ClsNodo2(); 
     ClsVeterinaria datos;
-    private DefaultListModel lista1 = new DefaultListModel();
+ 
     
    
-    public WinPacientesListEst(   ClsListDim2   list) {
+    public WinPacientesListEst(ClsPilaDim2 pil) {
         
         initComponents();
-        ListInf.setModel(lista1);
-        this.lista=list;
+        this.pila=pil;
         setSize(720, 530);
+        
     }
 
-       
-       public void listar(){
-        
-        lista1.clear();
-        aux = lista.cabizq();
-        aux=aux.enlder();
-        for (int i = 0; i < lista.nelem(); i++) {
-            lista1.addElement((i + 1) + "           " + aux.inf().NombreDueño()+ "                  "
-                + aux.inf().IdDueño() + "        " + aux.inf().NombreMascota()
-                +"         "+aux.inf().CostoFactura());
-            aux = aux.enlder();
-        }
-    }
+
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -56,8 +45,8 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         txtVisualizar = new javax.swing.JLabel();
         btnSalida = new javax.swing.JPanel();
         txtSalida = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        ListInf = new javax.swing.JList<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtArea = new javax.swing.JTextArea();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -129,9 +118,11 @@ public class WinPacientesListEst extends javax.swing.JPanel {
 
         content.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 200, 50));
 
-        jScrollPane2.setViewportView(ListInf);
+        txtArea.setColumns(20);
+        txtArea.setRows(5);
+        jScrollPane1.setViewportView(txtArea);
 
-        content.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 350, 380));
+        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 330, 370));
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
@@ -169,7 +160,7 @@ public class WinPacientesListEst extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSalidaMouseExited
 
     private void txtVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVisualizarMouseClicked
-    listar();
+    txtArea.setText(pila.listar());
     }//GEN-LAST:event_txtVisualizarMouseClicked
 
     public JPanel getContent() {
@@ -177,12 +168,12 @@ public class WinPacientesListEst extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> ListInf;
     private javax.swing.JPanel btnSalida;
     private javax.swing.JPanel btnVisualizar;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtArea;
     private javax.swing.JLabel txtSalida;
     private javax.swing.JLabel txtVisualizar;
     // End of variables declaration//GEN-END:variables

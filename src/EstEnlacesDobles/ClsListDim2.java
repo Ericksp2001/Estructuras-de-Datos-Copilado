@@ -11,6 +11,7 @@ import ClsVeterinaria.ClsVeterinaria;
 public class ClsListDim2 {
     private ClsNodo2 _cabizq;
     private ClsNodo2 _cabder;
+    private ClsNodo2 _aux;
     private int _nelem;
     
     //Constructor
@@ -178,7 +179,19 @@ public class ClsListDim2 {
         return resp;
     }
     
-    
+           public String listar(){
+        String informacion="";
+        _aux = cabizq();
+        _aux=_aux.enlder();
+        for (int i = 0; i <nelem(); i++) {
+          informacion+=_aux.inf().NombreDueño()+ "                  "
+        + _aux.inf().IdDueño()+ "           " +_aux.inf().FechaIngreso()+"\n";
+          _aux = _aux.enlder();
+        }
+        return informacion;
+    }
+   
+   
     
    
 }

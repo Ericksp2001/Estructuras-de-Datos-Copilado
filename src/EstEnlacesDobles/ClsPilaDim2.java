@@ -55,4 +55,8 @@ public class ClsPilaDim2 {
     public int Buscar(String clave){
         return _Pila.Buscar(clave);
     }
+    
+       public String listar(){
+        return _Pila.listar();
+    }
 }

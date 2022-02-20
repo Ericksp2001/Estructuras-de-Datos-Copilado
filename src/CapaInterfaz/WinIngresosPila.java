@@ -21,31 +21,19 @@ import javax.swing.JPanel;
 public class WinIngresosPila extends javax.swing.JPanel {
 
     
-     ClsListDim2 lista;
+    ClsPilaDim2 pila;
     ClsNodo2 aux=new ClsNodo2(); 
     ClsVeterinaria datos;
     private DefaultListModel lista1 = new DefaultListModel();
     
-    public WinIngresosPila(ClsListDim2 list, ClsVeterinaria data) {
+    public WinIngresosPila(ClsPilaDim2 pil) {
         initComponents();
         ListInf.setModel(lista1);
-        this.lista=list;
-        this.datos=data;
+        this.pila=pil;
         setSize(720, 530);
     }
 
           
-       public void listar(){
-        
-        lista1.clear();
-        aux = lista.cabizq();
-        aux=aux.enlder();
-        for (int i = 0; i < lista.nelem(); i++) {
-            lista1.addElement((i + 1) + "           " + aux.inf().NombreDueño()+ "                  "
-                + aux.inf().IdDueño()+ "           " +aux.inf().FechaIngreso());
-            aux = aux.enlder();
-        }
-    }
    
 
     @SuppressWarnings("unchecked")
@@ -68,9 +56,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
         cmpTelefono = new javax.swing.JTextField();
         cmpId = new javax.swing.JTextField();
         txtId = new javax.swing.JLabel();
-        cmpPosicion = new javax.swing.JTextField();
         txtCosto = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         cmpCosto = new javax.swing.JTextField();
         btnMacho = new javax.swing.JRadioButton();
         btnHembra = new javax.swing.JRadioButton();
@@ -83,7 +69,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         content.add(cmpRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 100, -1));
         content.add(cmpNombreM, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 100, -1));
-        content.add(cmpNombreD, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 120, -1));
+        content.add(cmpNombreD, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 120, -1));
 
         txtRaza.setBackground(new java.awt.Color(0, 0, 0));
         txtRaza.setForeground(new java.awt.Color(0, 0, 0));
@@ -93,7 +79,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
         txtNomDue.setBackground(new java.awt.Color(0, 0, 0));
         txtNomDue.setForeground(new java.awt.Color(0, 0, 0));
         txtNomDue.setText("Nombre Dueño:");
-        content.add(txtNomDue, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, 20));
+        content.add(txtNomDue, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, -1, 20));
 
         txtNomMas.setBackground(new java.awt.Color(0, 0, 0));
         txtNomMas.setForeground(new java.awt.Color(0, 0, 0));
@@ -115,46 +101,34 @@ public class WinIngresosPila extends javax.swing.JPanel {
         txtTelefono.setBackground(new java.awt.Color(0, 0, 0));
         txtTelefono.setForeground(new java.awt.Color(0, 0, 0));
         txtTelefono.setText("Telefono:");
-        content.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, 20));
-        content.add(cmpTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 120, -1));
-        content.add(cmpId, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 120, -1));
+        content.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, 20));
+        content.add(cmpTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 120, -1));
+        content.add(cmpId, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 120, -1));
 
         txtId.setBackground(new java.awt.Color(0, 0, 0));
         txtId.setForeground(new java.awt.Color(0, 0, 0));
         txtId.setText("ID:");
-        content.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, 20));
-
-        cmpPosicion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmpPosicionActionPerformed(evt);
-            }
-        });
-        content.add(cmpPosicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 60, -1));
+        content.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 190, 20, 20));
 
         txtCosto.setBackground(new java.awt.Color(0, 0, 0));
         txtCosto.setForeground(new java.awt.Color(0, 0, 0));
         txtCosto.setText("Costo:");
-        content.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, 20));
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Posicion:");
-        content.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
-        content.add(cmpCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 120, -1));
+        content.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, 20));
+        content.add(cmpCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 120, -1));
 
         Group1.add(btnMacho);
         btnMacho.setForeground(new java.awt.Color(0, 0, 0));
         btnMacho.setText("Macho");
-        content.add(btnMacho, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
+        content.add(btnMacho, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
         Group1.add(btnHembra);
         btnHembra.setForeground(new java.awt.Color(0, 0, 0));
         btnHembra.setText("Hembra");
-        content.add(btnHembra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
+        content.add(btnHembra, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
 
         jScrollPane1.setViewportView(ListInf);
 
-        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 170, 360));
+        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 210, 360));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
@@ -205,15 +179,10 @@ public class WinIngresosPila extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmpPosicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmpPosicionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmpPosicionActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
   datos= new ClsVeterinaria();
            try {
-               aux=lista.cabizq();
-            if (lista.Buscar(cmpId.getText()) > -1) {
+            if (pila.Buscar(cmpId.getText()) > -1) {
                 JOptionPane.showMessageDialog(null, "El usuario ya existe");
             } else {
                 datos.NombreMascota(cmpNombreM.getText());
@@ -230,7 +199,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
                 }else{
                 datos.SexoMascota(btnMacho.getText());    
                 }
-                lista.poner((Integer.parseInt(cmpPosicion.getText())), datos, true);
+                pila.Poner(datos);
                 JOptionPane.showMessageDialog(null, "Registro Procesado exitosamente");
               }
                 cmpNombreM.setText(null);
@@ -241,8 +210,6 @@ public class WinIngresosPila extends javax.swing.JPanel {
                 cmpFechaIngreso.setText(null);
                 cmpRaza.setText(null);
                 cmpTelefono.setText(null);
-                cmpPosicion.setText(null);
-                listar();
                 
                 
         } catch (Exception e) {
@@ -254,11 +221,9 @@ public class WinIngresosPila extends javax.swing.JPanel {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         try {
 
-            if (lista.sacar(ListInf.getSelectedIndex() + 1, true) == true) {
+            if (pila.Sacar() == true) {
                 JOptionPane.showMessageDialog(null, "Usuario sacado exitosamente");
-                lista1.clear();
-                ClsNodo2 aux = lista.cabizq().enlder();
-                listar();
+           
 
             } else {
 
@@ -288,13 +253,11 @@ public class WinIngresosPila extends javax.swing.JPanel {
     private javax.swing.JTextField cmpId;
     private javax.swing.JTextField cmpNombreD;
     private javax.swing.JTextField cmpNombreM;
-    private javax.swing.JTextField cmpPosicion;
     private javax.swing.JTextField cmpRaza;
     private javax.swing.JTextField cmpTelefono;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel txtCosto;
     private javax.swing.JLabel txtEdad;

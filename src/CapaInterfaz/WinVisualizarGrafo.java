@@ -8,6 +8,7 @@ import EstEnlacesDobles.ClsListDim2;
 import EstEnlacesDobles.ClsNodo2;
 import java.awt.Color;
 import EstArbol.*;
+import EstEnlacesDobles.ClsPilaDim2;
 import java.awt.BorderLayout;
 import java.awt.Rectangle;
 import java.util.logging.Level;
@@ -22,16 +23,16 @@ import javax.swing.JPanel;
  */
 public class WinVisualizarGrafo extends javax.swing.JPanel {
 
-    ClsListDim2 lista;
+    ClsPilaDim2 pila;
     ClsArboles arbol = new ClsArboles();
     
     /**
      * Creates new form WinVisualizarGrafo
      */
-    public WinVisualizarGrafo(ClsListDim2   list) {
+    public WinVisualizarGrafo(ClsPilaDim2   pil) {
         initComponents();
         setSize(720, 530);
-        this.lista = list;
+        this.pila = pil;
     }
 
     /**
@@ -301,7 +302,7 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
 
     private void txtVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVisualizarMouseClicked
         ClsNodo2 otro= new ClsNodo2();
-        otro = lista.cabizq();
+        otro = pila.CabIzq();
         for (int i = 1; otro.enlder()!= null; i++){
             ClsNodo nodo = new ClsNodo(otro.inf());
             arbol.insertar(nodo , arbol.getRaiz());
