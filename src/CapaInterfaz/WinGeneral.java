@@ -49,6 +49,7 @@ public class WinGeneral extends javax.swing.JFrame {
         Opciones = new javax.swing.JMenu();
         Ingreso = new javax.swing.JMenuItem();
         btnPacientes = new javax.swing.JMenuItem();
+        btnVisualizar = new javax.swing.JMenuItem();
         Creditos = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,6 +76,14 @@ public class WinGeneral extends javax.swing.JFrame {
             }
         });
         Opciones.add(btnPacientes);
+
+        btnVisualizar.setText("Visualizar");
+        btnVisualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisualizarActionPerformed(evt);
+            }
+        });
+        Opciones.add(btnVisualizar);
 
         Menu.add(Opciones);
 
@@ -108,6 +117,11 @@ public class WinGeneral extends javax.swing.JFrame {
        win1=new WinIngresosPila(lista,info);
         showPanel(win1.getContent());
     }//GEN-LAST:event_IngresoActionPerformed
+
+    private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
+        win3 = new WinVisualizarGrafo(lista);
+        showPanel(win3.getContent());
+    }//GEN-LAST:event_btnVisualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +174,7 @@ public class WinGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuBar Menu;
     private javax.swing.JMenu Opciones;
     private javax.swing.JMenuItem btnPacientes;
+    private javax.swing.JMenuItem btnVisualizar;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgBienvenido;
     // End of variables declaration//GEN-END:variables
