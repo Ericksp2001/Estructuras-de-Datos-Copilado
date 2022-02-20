@@ -20,6 +20,7 @@ public class WinGeneral extends javax.swing.JFrame {
   ClsListDim2 lista;
   WinIngresosPila win1;
   WinPacientesListEst win2;
+  WinVisualizarGrafo win3;
   ClsVeterinaria info;
     
     public WinGeneral( ) {
