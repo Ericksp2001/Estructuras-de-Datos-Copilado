@@ -185,7 +185,7 @@ public class ClsListDim2 {
         _aux=_aux.enlder();
     
         for (int i = 0; i <nelem(); i++) {
-          informacion+=_aux.inf().NombreMascota()+"\t"+_aux.inf().NombreDueño()
+          informacion+=_aux.inf().NombreDueño()+"\t"+_aux.inf().NombreMascota()
           +"\t"+_aux.inf().FechaIngreso()+"\n";
           _aux = _aux.enlder();
         }
@@ -209,7 +209,7 @@ public class ClsListDim2 {
            
     public String toString1() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Nombre Mascota"+"\t"+"Nombre Dueño"+"\t"+"Fecha Ingreso"+"\n");
+        sb.append("Nombre Dueño"+"\t"+ "Mascota"+"\t"+"Fecha Ingreso"+"\n");
         return sb.toString();
     }
    
