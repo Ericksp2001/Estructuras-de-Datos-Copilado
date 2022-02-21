@@ -8,8 +8,14 @@ package CapaInterfaz;
 import EstDatosNormales.ColaEst;
 import EstEnlacesDobles.ClsNodo2;
 import EstEnlacesDobles.ClsPilaDim2;
+import java.awt.Color;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import javax.swing.JPanel;
+import javax.swing.*;
+import javax.swing.text.*;
 
 /**
  *
@@ -37,31 +43,60 @@ public class WinBusqueda extends javax.swing.JPanel {
     }
 
    
+    public void buscar(JTextArea Area, String texto) {
+        
+        
+        
+        if (texto.length() >= 1 ) {
+        if (cola.getCola().buscarMascota(texto)==true || cola.getCola().buscarIdDueño(texto)==true || cola.getCola().buscarDueño(texto)==true){
+             
+            DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(Color.YELLOW);
+            Highlighter h = Area.getHighlighter();
+            h.removeAllHighlights();
+            String textoArea = Area.getText();
+            String caracteres = texto;
+            Pattern p = Pattern.compile("(?i)" + caracteres);
+            Matcher m = p.matcher(textoArea);
+            while (m.find()) {
+                try {
+                    h.addHighlight(m.start(), m.end(), highlightPainter);
+                } catch (BadLocationException ex) {
+                    System.out.println("Un error ha ocurrido");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "El ususario no esta registro");
+        }
+        
+        } else {
+            JOptionPane.showMessageDialog(null, "Por favor ingresa la palabra a buscar");
+        }
+    }
+
 
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        botonGroup1 = new javax.swing.ButtonGroup();
         content = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        cmpResultados = new javax.swing.JTextArea();
+        txtArea = new javax.swing.JTextArea();
         btnBusqueda = new javax.swing.JButton();
         cmpBuscar = new javax.swing.JTextField();
         btnMascota = new javax.swing.JRadioButton();
         btnDueño = new javax.swing.JRadioButton();
-        btnRaza = new javax.swing.JRadioButton();
         btnId = new javax.swing.JRadioButton();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cmpResultados.setColumns(20);
-        cmpResultados.setRows(5);
-        jScrollPane1.setViewportView(cmpResultados);
+        txtArea.setColumns(20);
+        txtArea.setRows(5);
+        jScrollPane1.setViewportView(txtArea);
 
-        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 330, 270));
+        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 170, 320));
 
         btnBusqueda.setText("Buscar");
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
@@ -69,9 +104,10 @@ public class WinBusqueda extends javax.swing.JPanel {
                 btnBusquedaActionPerformed(evt);
             }
         });
-        content.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 100, 30));
-        content.add(cmpBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 180, 30));
+        content.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 100, 30));
+        content.add(cmpBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 210, 30));
 
+        botonGroup1.add(btnMascota);
         btnMascota.setForeground(new java.awt.Color(0, 0, 0));
         btnMascota.setText("Nombre Mascota");
         btnMascota.addActionListener(new java.awt.event.ActionListener() {
@@ -79,19 +115,27 @@ public class WinBusqueda extends javax.swing.JPanel {
                 btnMascotaActionPerformed(evt);
             }
         });
-        content.add(btnMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, -1));
+        content.add(btnMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
 
+        botonGroup1.add(btnDueño);
         btnDueño.setForeground(new java.awt.Color(0, 0, 0));
         btnDueño.setText("Nombre Dueño");
-        content.add(btnDueño, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, -1, -1));
+        btnDueño.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDueñoActionPerformed(evt);
+            }
+        });
+        content.add(btnDueño, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
-        btnRaza.setForeground(new java.awt.Color(0, 0, 0));
-        btnRaza.setText("Raza");
-        content.add(btnRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, -1, -1));
-
+        botonGroup1.add(btnId);
         btnId.setForeground(new java.awt.Color(0, 0, 0));
         btnId.setText("Id Dueño");
-        content.add(btnId, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
+        btnId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIdActionPerformed(evt);
+            }
+        });
+        content.add(btnId, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
@@ -109,41 +153,49 @@ public class WinBusqueda extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
-        cmpResultados.setText("");
+     
         String busqueda  = cmpBuscar.getText();
-        String res;
+   
         if(btnDueño.isSelected()){
-            res = cola.getCola().buscarDueño(busqueda);
-        }else if(btnRaza.isSelected()){
-            res = cola.getCola().buscarRaza(busqueda);
-        }else if(btnId.isSelected()){
-            res = cola.getCola().buscarIdDueño(busqueda);
-        }else{
-            res = cola.getCola().buscarMascota(busqueda);
+            buscar(txtArea,busqueda);
         }
-        cmpResultados.setText(res);
-        cmpBuscar.setText("");
+        if(btnMascota.isSelected()){
+            buscar(txtArea,busqueda);
+        }
+        if(btnId.isSelected()){
+            buscar(txtArea,busqueda);
+        }
+
+
+    
     }//GEN-LAST:event_btnBusquedaActionPerformed
 
     private void btnMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMascotaActionPerformed
-        // TODO add your handling code here:
+          txtArea.setText(cola.getCola().InfoMascotas());
     }//GEN-LAST:event_btnMascotaActionPerformed
+
+    private void btnDueñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDueñoActionPerformed
+        txtArea.setText(cola.getCola().InfoDueños());
+    }//GEN-LAST:event_btnDueñoActionPerformed
+
+    private void btnIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdActionPerformed
+        txtArea.setText(cola.getCola().InfoIdDueños());
+    }//GEN-LAST:event_btnIdActionPerformed
 
     public JPanel getContent() {
         return content;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup botonGroup1;
     private javax.swing.JButton btnBusqueda;
     private javax.swing.JRadioButton btnDueño;
     private javax.swing.JRadioButton btnId;
     private javax.swing.JRadioButton btnMascota;
-    private javax.swing.JRadioButton btnRaza;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField cmpBuscar;
-    private javax.swing.JTextArea cmpResultados;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtArea;
     // End of variables declaration//GEN-END:variables
 }

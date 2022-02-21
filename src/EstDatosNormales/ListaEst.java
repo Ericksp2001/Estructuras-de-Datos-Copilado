@@ -112,65 +112,63 @@ public class ListaEst {
     }
     //---------------------------------------------------------------------------------------------------//
     //Funcion para imprimir la lista
-    @Override
-    public String toString(){
+    
+    public String InfoDueños(){
         String texto="";
         for(int i=0; i<this._numEle; i++){
-            texto+= i+1 +".-\t"+this._registro[i].toString()+"\n";
+            texto+=this._registro[i].BusDueño()+"\n";
+        }
+        return texto;
+    }
+    
+    public String InfoMascotas(){
+        String texto="";
+        for(int i=0; i<this._numEle; i++){
+            texto+=this._registro[i].BusMascota()+"\n";
+        }
+        return texto;
+    }
+    
+    
+    public String InfoIdDueños(){
+        String texto="";
+        for(int i=0; i<this._numEle; i++){
+            texto+=this._registro[i].BusIDDueño()+"\n";
         }
         return texto;
     }
     //---------------------------------------------------------------------------------------------------//
     //Funcion para buscar elementos en la lista en funcion del titulo
-    public String buscarMascota(String dato){
-        String titulo="";
+    public boolean buscarMascota(String dato){
+        boolean resp=true;
         for(int i=0; i<this._numEle; i++){
             if(this._registro[i].NombreMascota().equals(dato)){
-                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
+              return resp;
             }
+           
         }
-        return titulo;
+       return false;
     }
-    //Funcion para buscar elementos en la lista en funcion del autor
-    public String buscarDueño(String dato){
-        String titulo="";
+     public boolean buscarDueño(String dato){
+        boolean resp=true;
         for(int i=0; i<this._numEle; i++){
             if(this._registro[i].NombreDueño().equals(dato)){
-                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
+              return resp;
             }
+           
         }
-        return titulo;
+       return false;
     }
-    //Funcion para buscar elementos en la lista en funcion del isbn
-    public String buscarRaza(String dato){
-        String titulo="";
-        for(int i=0; i<this._numEle; i++){
-            if(this._registro[i].RazaMascota().equals(dato)){
-                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
-            }
-        }
-        return titulo;
-    }
-    //Funcion para buscar elementos en la lista en funcion del precio
-      public String buscarIdDueño(String dato){
-        String titulo="";
+   public boolean buscarIdDueño(String dato){
+        boolean resp=true;
         for(int i=0; i<this._numEle; i++){
             if(this._registro[i].IdDueño().equals(dato)){
-                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
+              return resp;
             }
+           
         }
-        return titulo;
+       return false;
     }
- 
-    //Funcion para buscar elementos en la lista en funcion de la posicion
-    public String buscarPosicion(int dato){
-        String titulo="";
-        for(int i=0; i<this._numEle; i++){
-            if(i==dato){
-                titulo+=i+1 +".-\t"+this._registro[i].toString()+"\n";
-            }
-        }
-        return titulo;
-    }
+
     
 }

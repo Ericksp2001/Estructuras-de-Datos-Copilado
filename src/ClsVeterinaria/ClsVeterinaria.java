@@ -118,16 +118,29 @@ public class ClsVeterinaria {
         this._CostoFactura = _CostoFactura;
     }
 
-    @Override
-    public String toString() {
+  
+    public String BusDueño() {
         StringBuilder sb = new StringBuilder();
-        sb.append(_NombreMascota);
-        sb.append(_NombreDueño);
-        sb.append(_IdDueño);
-        sb.append(_Telefono);
-        sb.append(_CostoFactura);
+        sb.append(_NombreDueño).append("\t");
+    
         return sb.toString();
     }
+
+   public String BusMascota() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(_NombreMascota).append("\t");
+    
+        return sb.toString();
+    }
+
+      public String BusIDDueño() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(_IdDueño).append("\t");
+    
+        return sb.toString();
+    }
+      
+
     
     
     

@@ -22,7 +22,7 @@ public class WinGeneral extends javax.swing.JFrame {
   WinIngresosPila win1;
   WinPacientesListEst win2;
   WinVisualizarGrafo win3;
-    
+  WinBusqueda win4;
   
     public WinGeneral( ) {
         initComponents();
@@ -42,6 +42,7 @@ public class WinGeneral extends javax.swing.JFrame {
         Opciones = new javax.swing.JMenu();
         Ingreso = new javax.swing.JMenuItem();
         btnPacientes = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         btnVisualizar = new javax.swing.JMenuItem();
         Creditos = new javax.swing.JMenu();
 
@@ -69,6 +70,14 @@ public class WinGeneral extends javax.swing.JFrame {
             }
         });
         Opciones.add(btnPacientes);
+
+        jMenuItem1.setText("Buscar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        Opciones.add(jMenuItem1);
 
         btnVisualizar.setText("Visualizar");
         btnVisualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +123,11 @@ public class WinGeneral extends javax.swing.JFrame {
        win3=new WinVisualizarGrafo(pila);
        showPanel(win3.getContent());
     }//GEN-LAST:event_btnVisualizarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+            win4=new WinBusqueda(pila);
+       showPanel(win4.getContent());
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,5 +183,6 @@ public class WinGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuItem btnVisualizar;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgBienvenido;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
