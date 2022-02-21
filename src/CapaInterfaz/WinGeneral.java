@@ -28,7 +28,6 @@ public class WinGeneral extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setSize(716, 548);
-    
     }
 
    

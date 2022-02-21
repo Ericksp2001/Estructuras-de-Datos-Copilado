@@ -35,6 +35,7 @@ public class ColaEst {
         return _cola.sacar(1);
     }
     
+    
     @Override
     public String toString(){
         return _cola.toString();

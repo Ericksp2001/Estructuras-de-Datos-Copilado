@@ -302,7 +302,7 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
 
     private void txtVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVisualizarMouseClicked
         ClsNodo2 otro= new ClsNodo2();
-        otro = pila.CabIzq();
+        otro = pila.CabIzq().enlder();
         for (int i = 1; otro.enlder()!= null; i++){
             ClsNodo nodo = new ClsNodo(otro.inf());
             arbol.insertar(nodo , arbol.getRaiz());
