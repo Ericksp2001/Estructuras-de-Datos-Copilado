@@ -18,11 +18,11 @@ import org.netbeans.lib.awtextra.AbsoluteConstraints;
  */
 public class WinGeneral extends javax.swing.JFrame {
 
-  ClsPilaDim2 pila;
-  WinIngresosPila win1;
+  ClsListDim2  lista=new ClsListDim2() ;
+  WinIngresosListEnlazadas win1;
   WinPacientesListEst win2;
   WinVisualizarGrafo win3;
-  WinBusqueda win4;
+  WinBusquedaListEst win4;
   
     public WinGeneral( ) {
         initComponents();
@@ -109,23 +109,23 @@ public class WinGeneral extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacientesActionPerformed
-        win2 = new WinPacientesListEst(pila);
+        win2 = new WinPacientesListEst(lista);
         showPanel(win2.getContent());
     }//GEN-LAST:event_btnPacientesActionPerformed
 
     private void IngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoActionPerformed
-       pila=new ClsPilaDim2(); 
-       win1=new WinIngresosPila(pila);
+      
+       win1=new WinIngresosListEnlazadas(lista);
         showPanel(win1.getContent());
     }//GEN-LAST:event_IngresoActionPerformed
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-       win3=new WinVisualizarGrafo(pila);
+       win3=new WinVisualizarGrafo(lista);
        showPanel(win3.getContent());
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-            win4=new WinBusqueda(pila);
+            win4=new WinBusquedaListEst(lista);
        showPanel(win4.getContent());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 

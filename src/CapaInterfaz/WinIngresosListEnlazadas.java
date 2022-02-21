@@ -18,18 +18,18 @@ import javax.swing.JPanel;
  *
  * @author Erick Perez
  */
-public class WinIngresosPila extends javax.swing.JPanel {
+public class WinIngresosListEnlazadas extends javax.swing.JPanel {
 
     
-    ClsPilaDim2 pila;
+    ClsListDim2 lista;
     ClsNodo2 aux=new ClsNodo2(); 
     ClsVeterinaria datos;
 
     
-    public WinIngresosPila(ClsPilaDim2 pil) {
+    public WinIngresosListEnlazadas(ClsListDim2 list) {
         initComponents();
    
-        this.pila=pil;
+        this.lista=list;
         setSize(720, 530);
     }
 
@@ -61,9 +61,8 @@ public class WinIngresosPila extends javax.swing.JPanel {
         btnMacho = new javax.swing.JRadioButton();
         btnHembra = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtArea = new javax.swing.JTextArea();
+        txtCosto1 = new javax.swing.JLabel();
+        cmpPosicion = new javax.swing.JTextField();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -112,8 +111,8 @@ public class WinIngresosPila extends javax.swing.JPanel {
 
         txtCosto.setBackground(new java.awt.Color(0, 0, 0));
         txtCosto.setForeground(new java.awt.Color(0, 0, 0));
-        txtCosto.setText("Costo:");
-        content.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, 20));
+        txtCosto.setText("Posicion:");
+        content.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, -1, 20));
         content.add(cmpCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 120, -1));
 
         Group1.add(btnMacho);
@@ -141,30 +140,13 @@ public class WinIngresosPila extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        content.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 120, 100));
+        content.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 120, 100));
 
-        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnEliminar.setForeground(new java.awt.Color(0, 0, 0));
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella3.png"))); // NOI18N
-        btnEliminar.setText("ELIMINAR");
-        btnEliminar.setContentAreaFilled(false);
-        btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella3.png"))); // NOI18N
-        btnEliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella4.png"))); // NOI18N
-        btnEliminar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        content.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 120, 100));
-
-        txtArea.setColumns(20);
-        txtArea.setRows(5);
-        jScrollPane2.setViewportView(txtArea);
-
-        content.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, 330));
+        txtCosto1.setBackground(new java.awt.Color(0, 0, 0));
+        txtCosto1.setForeground(new java.awt.Color(0, 0, 0));
+        txtCosto1.setText("Costo:");
+        content.add(txtCosto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, 20));
+        content.add(cmpPosicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 120, -1));
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
@@ -184,7 +166,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
   datos= new ClsVeterinaria();
            try {
-            if (pila.Buscar(cmpId.getText()) > -1) {
+            if (lista.Buscar(cmpId.getText()) > -1) {
                 JOptionPane.showMessageDialog(null, "El usuario ya existe");
             } else {
                 datos.NombreMascota(cmpNombreM.getText());
@@ -201,7 +183,8 @@ public class WinIngresosPila extends javax.swing.JPanel {
                 }else{
                 datos.SexoMascota(btnHembra.getText());    
                 }
-                pila.Poner(datos);
+                lista.poner(Integer.parseInt(cmpPosicion.getText()), datos, true);
+                
                 JOptionPane.showMessageDialog(null, "Registro Procesado exitosamente");
               }
                 cmpNombreM.setText(null);
@@ -212,7 +195,7 @@ public class WinIngresosPila extends javax.swing.JPanel {
                 cmpFechaIngreso.setText(null);
                 cmpRaza.setText(null);
                 cmpTelefono.setText(null);
-                txtArea.setText(pila.listar2());
+               
                 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Verificar los datos");
@@ -220,34 +203,12 @@ public class WinIngresosPila extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        try {
-
-            if (pila.Sacar() == true) {
-                
-                JOptionPane.showMessageDialog(null, "Usuario sacado exitosamente");
-                 txtArea.setText(pila.listar2());
-  
-       
-            } else {
-
-                JOptionPane.showMessageDialog(null, "El Registro no existe");
-
-            }
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Verificar los datos");
-        }
-
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
     public JPanel getContent() {
         return content;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Group1;
-    private javax.swing.JButton btnEliminar;
     private javax.swing.JRadioButton btnHembra;
     private javax.swing.JRadioButton btnMacho;
     private javax.swing.JTextField cmpCosto;
@@ -256,14 +217,14 @@ public class WinIngresosPila extends javax.swing.JPanel {
     private javax.swing.JTextField cmpId;
     private javax.swing.JTextField cmpNombreD;
     private javax.swing.JTextField cmpNombreM;
+    private javax.swing.JTextField cmpPosicion;
     private javax.swing.JTextField cmpRaza;
     private javax.swing.JTextField cmpTelefono;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea txtArea;
     private javax.swing.JLabel txtCosto;
+    private javax.swing.JLabel txtCosto1;
     private javax.swing.JLabel txtEdad;
     private javax.swing.JLabel txtId;
     private javax.swing.JLabel txtNomDue;

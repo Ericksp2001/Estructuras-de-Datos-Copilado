@@ -6,6 +6,7 @@ package CapaInterfaz;
 
 
 import EstDatosNormales.ColaEst;
+import EstEnlacesDobles.ClsListDim2;
 import EstEnlacesDobles.ClsNodo2;
 import EstEnlacesDobles.ClsPilaDim2;
 import java.awt.Color;
@@ -21,21 +22,21 @@ import javax.swing.text.*;
  *
  * @author Erick Perez
  */
-public class WinBusqueda extends javax.swing.JPanel {
+public class WinBusquedaListEst extends javax.swing.JPanel {
 
-    ClsPilaDim2 pila;
+    ClsListDim2 lista;
     ClsNodo2 aux=new ClsNodo2(); 
     ColaEst cola;
 
     
 
      
-    public WinBusqueda(ClsPilaDim2 pil){
+    public WinBusquedaListEst(ClsListDim2 list){
         initComponents();
-        this.pila=pil;
+        this.lista=list;
         setSize(720, 530);
-        cola = new ColaEst(pila.nelem());
-        aux = pil.CabIzq().enlder();
+        cola = new ColaEst(lista.nelem());
+        aux = lista.cabizq().enlder();
         while(aux!=null){
             cola.encolar(aux.inf());
             aux = aux.enlder();

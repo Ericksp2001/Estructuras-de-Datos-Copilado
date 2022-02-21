@@ -6,12 +6,14 @@ package CapaInterfaz;
 
 
 import ClsVeterinaria.ClsVeterinaria;
+import EstDatosNormales.ColaEst;
 import EstEnlacesDobles.ClsListDim2;
 import EstEnlacesDobles.ClsNodo2;
 import EstEnlacesDobles.ClsPilaDim2;
 
 import java.awt.Color;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -20,21 +22,33 @@ import javax.swing.JPanel;
  */
 public class WinPacientesListEst extends javax.swing.JPanel {
 
-    ClsPilaDim2 pila;
-    ClsNodo2 aux=new ClsNodo2(); 
-    ClsVeterinaria datos;
- 
+ ClsListDim2 lista;
+ DefaultListModel Jlista = new DefaultListModel();
+  ClsNodo2 aux=new ClsNodo2();
     
+        
    
-    public WinPacientesListEst(ClsPilaDim2 pil) {
+    public WinPacientesListEst(ClsListDim2 list) {
         
         initComponents();
-        this.pila=pil;
-        setSize(720, 530);
-        
+        this.lista=list;
+          setSize(720, 530);
+      txtLista.setModel(Jlista);
+      
     }
-
-
+    
+    
+  public void listar(){
+        Jlista.clear();
+        aux = lista.cabizq();
+        aux=aux.enlder();
+        for (int i = 0; i < lista.nelem(); i++) {
+            Jlista.addElement((i + 1) + "       " + aux.inf().NombreDueño());
+            aux = aux.enlder();
+        }
+    }
+   
+   
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -45,8 +59,8 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         txtVisualizar = new javax.swing.JLabel();
         btnSalida = new javax.swing.JPanel();
         txtSalida = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtArea = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtLista = new javax.swing.JList<>();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -104,6 +118,11 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         txtSalida.setForeground(new java.awt.Color(0, 0, 0));
         txtSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtSalida.setText("Marcar salida");
+        txtSalida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtSalidaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnSalidaLayout = new javax.swing.GroupLayout(btnSalida);
         btnSalida.setLayout(btnSalidaLayout);
@@ -118,11 +137,9 @@ public class WinPacientesListEst extends javax.swing.JPanel {
 
         content.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 200, 50));
 
-        txtArea.setColumns(20);
-        txtArea.setRows(5);
-        jScrollPane1.setViewportView(txtArea);
+        jScrollPane2.setViewportView(txtLista);
 
-        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 330, 370));
+        content.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 250, 340));
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
@@ -140,6 +157,7 @@ public class WinPacientesListEst extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVisualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisualizarMouseEntered
+      
         btnVisualizar.setBackground(new Color(0, 160, 230));
         txtVisualizar.setForeground(Color.WHITE);
     }//GEN-LAST:event_btnVisualizarMouseEntered
@@ -160,8 +178,28 @@ public class WinPacientesListEst extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSalidaMouseExited
 
     private void txtVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVisualizarMouseClicked
-    txtArea.setText(pila.listar1());
+ listar(); 
+ 
     }//GEN-LAST:event_txtVisualizarMouseClicked
+
+    private void txtSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSalidaMouseClicked
+  try {
+
+            if (lista.sacar(txtLista.getSelectedIndex(), true)) {
+
+                JOptionPane.showMessageDialog(null, "Usuario sacado exitosamente");
+                listar();
+
+            } else {
+
+                JOptionPane.showMessageDialog(null, "El Registro no existe");
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Verificar los datos");
+        }     
+    }//GEN-LAST:event_txtSalidaMouseClicked
 
     public JPanel getContent() {
         return content;
@@ -172,8 +210,8 @@ public class WinPacientesListEst extends javax.swing.JPanel {
     private javax.swing.JPanel btnVisualizar;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtArea;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> txtLista;
     private javax.swing.JLabel txtSalida;
     private javax.swing.JLabel txtVisualizar;
     // End of variables declaration//GEN-END:variables

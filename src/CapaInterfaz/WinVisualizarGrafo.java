@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -23,16 +24,15 @@ import javax.swing.JPanel;
  */
 public class WinVisualizarGrafo extends javax.swing.JPanel {
 
-    ClsPilaDim2 pila;
+    ClsListDim2 lista;
     ClsArboles arbol = new ClsArboles();
     
-    /**
-     * Creates new form WinVisualizarGrafo
-     */
-    public WinVisualizarGrafo(ClsPilaDim2   pil) {
+    
+    public WinVisualizarGrafo(ClsListDim2 list) {
         initComponents();
+        this.lista = list;
         setSize(720, 530);
-        this.pila = pil;
+
     }
 
     /**
@@ -301,8 +301,8 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPostOrdenMouseExited
 
     private void txtVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVisualizarMouseClicked
-        ClsNodo2 otro= new ClsNodo2();
-        otro = pila.CabIzq().enlder();
+        ClsNodo2 otro;
+        otro = lista.cabizq().enlder();
         for (int i = 1; otro.enlder()!= null; i++){
             ClsNodo nodo = new ClsNodo(otro.inf());
             arbol.insertar(nodo , arbol.getRaiz());
@@ -314,6 +314,7 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
             }
             otro = otro.enlder();
         }
+    
     }//GEN-LAST:event_txtVisualizarMouseClicked
 
     private void btnVisualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisualizarMouseEntered

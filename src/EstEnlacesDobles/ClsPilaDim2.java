@@ -3,6 +3,7 @@
 package EstEnlacesDobles;
 
 import ClsVeterinaria.ClsVeterinaria;
+import EstDatosNormales.ListaEst;
 
 /**
  *
@@ -31,6 +32,15 @@ public class ClsPilaDim2 {
         return _Pila.cabder();
     }
 
+    public ClsListDim2 getPila() {
+        return _Pila;
+    }
+
+    public void setPila(ClsListDim2 _Pila) {
+        this._Pila = _Pila;
+    }
+
+   
     /**
      * Adaptacion del metodo poner de la clase ClsListDim2 que cumple con la estrcutura de una pila
      * @param dato Objeto de tipo ClsAnimal que sera contenido en un nodo
