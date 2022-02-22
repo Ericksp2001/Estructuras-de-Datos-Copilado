@@ -95,6 +95,7 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtArea.setEditable(false);
         txtArea.setColumns(20);
         txtArea.setRows(5);
         jScrollPane1.setViewportView(txtArea);

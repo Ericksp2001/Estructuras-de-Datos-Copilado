@@ -154,6 +154,7 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
         txtNomMas1.setText("Nombre Mascota:");
         content.add(txtNomMas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 20));
 
+        txtArea.setEditable(false);
         txtArea.setColumns(20);
         txtArea.setRows(5);
         jScrollPane1.setViewportView(txtArea);
