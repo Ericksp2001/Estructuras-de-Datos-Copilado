@@ -12,7 +12,8 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Erick Perez
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
  */
 public class WinCarga extends javax.swing.JFrame {
 

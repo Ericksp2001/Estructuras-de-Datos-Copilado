@@ -15,7 +15,8 @@ import javax.swing.*;
 
 /**
  *
- * @author Erick Perez
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
  */
 public class WinCreditos extends javax.swing.JPanel {
 

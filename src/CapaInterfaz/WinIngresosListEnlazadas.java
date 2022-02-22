@@ -9,14 +9,13 @@ import ClsVeterinaria.*;
 
 import EstEnlacesDobles.*;
 
-import java.awt.Color;
-import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
- * @author Erick Perez
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
  */
 public class WinIngresosListEnlazadas extends javax.swing.JPanel {
 

@@ -5,20 +5,16 @@
 package CapaInterfaz;
 
 
-import ClsVeterinaria.ClsVeterinaria;
-import EstDatosNormales.ColaEst;
 import EstEnlacesDobles.ClsListDim2;
 import EstEnlacesDobles.ClsNodo2;
-import EstEnlacesDobles.ClsPilaDim2;
-
-import java.awt.Color;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
- * @author Erick Perez
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
  */
 public class WinPacientesListEst extends javax.swing.JPanel {
 

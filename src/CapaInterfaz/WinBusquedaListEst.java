@@ -20,7 +20,8 @@ import javax.swing.text.*;
 
 /**
  *
- * @author Erick Perez
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
  */
 public class WinBusquedaListEst extends javax.swing.JPanel {
 
@@ -46,13 +47,9 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
 
    
     public void buscar(JTextArea Area, String texto) {
-        
-        
-        
         if (texto.length() >= 1 ) {
             
         if (cola.getCola().buscarMascota(texto)==true || cola.getCola().buscarIdDueño(texto)==true || cola.getCola().buscarDueño(texto)==true){
-             
             DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(Color.YELLOW);
             Highlighter h = Area.getHighlighter();
             h.removeAllHighlights();
