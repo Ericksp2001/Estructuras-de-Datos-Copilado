@@ -43,12 +43,13 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         aux = lista.cabizq();
         aux=aux.enlder();
        
-            Jlista.addElement("Nombre Dueño"+ "       " + "Mascota"
-                    + "       " +"Fecha Ingreso");
+            Jlista.addElement("Mascota"+ "       " + "Sexo"+ "       " 
+                   +"Raza"+ "       " + "Fecha de Ingreso" + "       " +"Nombre Dueño");
         for (int i = 0; i < lista.nelem(); i++) {
            
-            Jlista.addElement((i + 1) + "       " + aux.inf().NombreMascota()
-                    + "       " + aux.inf().NombreDueño()+ "       " + aux.inf().FechaIngreso());
+            Jlista.addElement( aux.inf().NombreMascota() + "       " 
+                    + aux.inf().SexoMascota()+ "       " + aux.inf().RazaMascota()
+                    + "       " + aux.inf().FechaIngreso()+ "       "+aux.inf().NombreDueño());
             aux = aux.enlder();
         }
     }

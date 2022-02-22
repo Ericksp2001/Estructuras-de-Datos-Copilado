@@ -198,7 +198,7 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
                 datos.Telefono(cmpTelefono.getText());
                 if(btnMacho.isSelected()){
                 datos.SexoMascota(btnMacho.getText());
-                }else{
+                }else if(btnHembra.isSelected()){
                 datos.SexoMascota(btnHembra.getText());    
                 }
                 lista.poner(Integer.parseInt(cmpPosicion.getText()), datos, true);
@@ -214,6 +214,7 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
                 cmpRaza.setText(null);
                 cmpTelefono.setText(null);
                 cmpPosicion.setText(null);
+                
                
                 
         } catch (Exception e) {

@@ -35,6 +35,7 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
         initComponents();
         this.lista=list;
         setSize(720, 530);
+        
         cola = new ColaEst(lista.nelem());
         aux = lista.cabizq().enlder();
         while(aux!=null){
@@ -49,6 +50,7 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
         
         
         if (texto.length() >= 1 ) {
+            
         if (cola.getCola().buscarMascota(texto)==true || cola.getCola().buscarIdDueño(texto)==true || cola.getCola().buscarDueño(texto)==true){
              
             DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(Color.YELLOW);
@@ -66,7 +68,7 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(null, "El ususario no esta registro");
+            JOptionPane.showMessageDialog(null, "El ususario no esta registrado");
         }
         
         } else {
