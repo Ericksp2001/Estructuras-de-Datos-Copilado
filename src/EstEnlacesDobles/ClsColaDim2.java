@@ -5,8 +5,8 @@ import ClsVeterinaria.ClsVeterinaria;
 
 /**
  *
- * @author Erick Perez
- * 29/01/2021
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
  */
 public class ClsColaDim2 {
     

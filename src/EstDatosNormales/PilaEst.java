@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package EstDatosNormales;
-
+/**
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
+ */
 import ClsVeterinaria.ClsVeterinaria;
 
 /**

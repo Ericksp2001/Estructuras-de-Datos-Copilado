@@ -6,7 +6,8 @@ package ClsVeterinaria;
 
 /**
  *
- * @author Alex
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
  */
 public class ClsVeterinaria {
    

@@ -3,8 +3,8 @@ package EstArbol;
 
   /**
  *
- * @author Erick Pérez
- * 11/02/2022
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
  */
 
 import java.awt.*;

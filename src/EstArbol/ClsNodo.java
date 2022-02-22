@@ -1,7 +1,10 @@
 
 
 package EstArbol;
-
+/**
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
+ */
 import ClsVeterinaria.ClsVeterinaria;
 
 public class ClsNodo {

@@ -1,6 +1,10 @@
 
 
 package EstArbol;
+/**
+ * @author Erick Perez, Alexa Amaguaya
+ * 22/02/2022
+ */
 
 import java.util.ArrayList;
 import javax.swing.JPanel;
