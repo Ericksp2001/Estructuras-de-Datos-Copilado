@@ -42,8 +42,12 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         Jlista.clear();
         aux = lista.cabizq();
         aux=aux.enlder();
+       
+            aux = aux.enlder();
         for (int i = 0; i < lista.nelem(); i++) {
-            Jlista.addElement((i + 1) + "       " + aux.inf().NombreDueño());
+           
+            Jlista.addElement((i + 1) + "       " + aux.inf().NombreMascota()
+                    + "       " + aux.inf().NombreDueño()+ "       " + aux.inf().FechaIngreso());
             aux = aux.enlder();
         }
     }
@@ -55,93 +59,49 @@ public class WinPacientesListEst extends javax.swing.JPanel {
     private void initComponents() {
 
         content = new javax.swing.JPanel();
-        btnVisualizar = new javax.swing.JPanel();
-        txtVisualizar = new javax.swing.JLabel();
-        btnSalida = new javax.swing.JPanel();
-        txtSalida = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtLista = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnVisualizar.setBackground(new java.awt.Color(255, 255, 255));
-        btnVisualizar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVisualizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnVisualizarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnVisualizarMouseExited(evt);
-            }
-        });
-
-        txtVisualizar.setBackground(new java.awt.Color(255, 255, 255));
-        txtVisualizar.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        txtVisualizar.setForeground(new java.awt.Color(0, 0, 0));
-        txtVisualizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtVisualizar.setText("Visualizar");
-        txtVisualizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtVisualizarMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnVisualizarLayout = new javax.swing.GroupLayout(btnVisualizar);
-        btnVisualizar.setLayout(btnVisualizarLayout);
-        btnVisualizarLayout.setHorizontalGroup(
-            btnVisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-        );
-        btnVisualizarLayout.setVerticalGroup(
-            btnVisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-        );
-
-        content.add(btnVisualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 200, 50));
-
-        btnSalida.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnSalida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalida.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnSalidaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnSalidaMouseExited(evt);
-            }
-        });
-
-        txtSalida.setBackground(new java.awt.Color(255, 255, 255));
-        txtSalida.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        txtSalida.setForeground(new java.awt.Color(0, 0, 0));
-        txtSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtSalida.setText("Marcar salida");
-        txtSalida.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtSalidaMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnSalidaLayout = new javax.swing.GroupLayout(btnSalida);
-        btnSalida.setLayout(btnSalidaLayout);
-        btnSalidaLayout.setHorizontalGroup(
-            btnSalidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-        );
-        btnSalidaLayout.setVerticalGroup(
-            btnSalidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-        );
-
-        content.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 200, 50));
-
         jScrollPane2.setViewportView(txtLista);
 
-        content.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 250, 340));
+        content.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 340, 390));
 
-        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton1.setText("Visualizar");
+        jButton1.setContentAreaFilled(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton2.jpg"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        content.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 180, 60));
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton2.setText("Marcar Salida");
+        jButton2.setContentAreaFilled(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton2.jpg"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        content.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 180, 60));
+
+        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo_2.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -156,34 +116,12 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVisualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisualizarMouseEntered
-      
-        btnVisualizar.setBackground(new Color(0, 160, 230));
-        txtVisualizar.setForeground(Color.WHITE);
-    }//GEN-LAST:event_btnVisualizarMouseEntered
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       listar(); 
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnVisualizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisualizarMouseExited
-        btnVisualizar.setBackground(Color.WHITE);
-        txtVisualizar.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnVisualizarMouseExited
-
-    private void btnSalidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalidaMouseEntered
-        btnSalida.setBackground(new Color(0, 160, 230));
-        txtSalida.setForeground(Color.WHITE);
-    }//GEN-LAST:event_btnSalidaMouseEntered
-
-    private void btnSalidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalidaMouseExited
-        btnSalida.setBackground(Color.WHITE);
-        txtSalida.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnSalidaMouseExited
-
-    private void txtVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVisualizarMouseClicked
- listar(); 
- 
-    }//GEN-LAST:event_txtVisualizarMouseClicked
-
-    private void txtSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSalidaMouseClicked
-  try {
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+   try {
 
             if (lista.sacar(txtLista.getSelectedIndex(), true)) {
 
@@ -199,20 +137,18 @@ public class WinPacientesListEst extends javax.swing.JPanel {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Verificar los datos");
         }     
-    }//GEN-LAST:event_txtSalidaMouseClicked
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public JPanel getContent() {
         return content;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnSalida;
-    private javax.swing.JPanel btnVisualizar;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> txtLista;
-    private javax.swing.JLabel txtSalida;
-    private javax.swing.JLabel txtVisualizar;
     // End of variables declaration//GEN-END:variables
 }

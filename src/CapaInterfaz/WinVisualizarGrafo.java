@@ -49,15 +49,11 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
         jInternalFrame2 = new javax.swing.JInternalFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         cmpRes = new javax.swing.JTextArea();
-        btnPostOrden = new javax.swing.JPanel();
-        txtPostOrden = new javax.swing.JLabel();
-        btnVisualizar = new javax.swing.JPanel();
-        txtVisualizar = new javax.swing.JLabel();
-        btnPreOrden = new javax.swing.JPanel();
-        txtPreOrden = new javax.swing.JLabel();
-        btnInOrden = new javax.swing.JPanel();
-        txtInOrden = new javax.swing.JLabel();
         txtArbol = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        PreOrder = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,11 +67,11 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
         jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
         jInternalFrame2Layout.setHorizontalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGap(0, 362, Short.MAX_VALUE)
         );
         jInternalFrame2Layout.setVerticalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 414, Short.MAX_VALUE)
+            .addGap(0, 404, Short.MAX_VALUE)
         );
 
         Desktop.setLayer(jInternalFrame2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -84,14 +80,16 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInternalFrame2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addGroup(DesktopLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jInternalFrame2, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE))
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInternalFrame2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+            .addComponent(jInternalFrame2, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
         );
 
-        content.add(Desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 400, 450));
+        content.add(Desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 380, 440));
 
         cmpRes.setEditable(false);
         cmpRes.setColumns(20);
@@ -101,173 +99,69 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
 
         content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 260, 110));
 
-        btnPostOrden.setBackground(new java.awt.Color(255, 255, 255));
-        btnPostOrden.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnPostOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnPostOrden.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnPostOrdenMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnPostOrdenMouseExited(evt);
-            }
-        });
-
-        txtPostOrden.setBackground(new java.awt.Color(255, 255, 255));
-        txtPostOrden.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        txtPostOrden.setForeground(new java.awt.Color(0, 0, 0));
-        txtPostOrden.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtPostOrden.setText("InOrden");
-        txtPostOrden.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtPostOrdenMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnPostOrdenLayout = new javax.swing.GroupLayout(btnPostOrden);
-        btnPostOrden.setLayout(btnPostOrdenLayout);
-        btnPostOrdenLayout.setHorizontalGroup(
-            btnPostOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPostOrdenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtPostOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        btnPostOrdenLayout.setVerticalGroup(
-            btnPostOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPostOrdenLayout.createSequentialGroup()
-                .addComponent(txtPostOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        content.add(btnPostOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 160, 40));
-
-        btnVisualizar.setBackground(new java.awt.Color(255, 255, 255));
-        btnVisualizar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVisualizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnVisualizarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnVisualizarMouseExited(evt);
-            }
-        });
-
-        txtVisualizar.setBackground(new java.awt.Color(255, 255, 255));
-        txtVisualizar.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        txtVisualizar.setForeground(new java.awt.Color(0, 0, 0));
-        txtVisualizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtVisualizar.setText("Visualizar");
-        txtVisualizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtVisualizarMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnVisualizarLayout = new javax.swing.GroupLayout(btnVisualizar);
-        btnVisualizar.setLayout(btnVisualizarLayout);
-        btnVisualizarLayout.setHorizontalGroup(
-            btnVisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnVisualizarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtVisualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        btnVisualizarLayout.setVerticalGroup(
-            btnVisualizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnVisualizarLayout.createSequentialGroup()
-                .addComponent(txtVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        content.add(btnVisualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 160, 40));
-
-        btnPreOrden.setBackground(new java.awt.Color(255, 255, 255));
-        btnPreOrden.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnPreOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnPreOrden.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnPreOrdenMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnPreOrdenMouseExited(evt);
-            }
-        });
-
-        txtPreOrden.setBackground(new java.awt.Color(255, 255, 255));
-        txtPreOrden.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        txtPreOrden.setForeground(new java.awt.Color(0, 0, 0));
-        txtPreOrden.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtPreOrden.setText("PreOrden");
-        txtPreOrden.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtPreOrdenMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnPreOrdenLayout = new javax.swing.GroupLayout(btnPreOrden);
-        btnPreOrden.setLayout(btnPreOrdenLayout);
-        btnPreOrdenLayout.setHorizontalGroup(
-            btnPreOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPreOrdenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtPreOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        btnPreOrdenLayout.setVerticalGroup(
-            btnPreOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPreOrdenLayout.createSequentialGroup()
-                .addComponent(txtPreOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        content.add(btnPreOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 160, 40));
-
-        btnInOrden.setBackground(new java.awt.Color(255, 255, 255));
-        btnInOrden.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnInOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnInOrden.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnInOrdenMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnInOrdenMouseExited(evt);
-            }
-        });
-
-        txtInOrden.setBackground(new java.awt.Color(255, 255, 255));
-        txtInOrden.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        txtInOrden.setForeground(new java.awt.Color(0, 0, 0));
-        txtInOrden.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtInOrden.setText("InOrden");
-        txtInOrden.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtInOrdenMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnInOrdenLayout = new javax.swing.GroupLayout(btnInOrden);
-        btnInOrden.setLayout(btnInOrdenLayout);
-        btnInOrdenLayout.setHorizontalGroup(
-            btnInOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnInOrdenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtInOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        btnInOrdenLayout.setVerticalGroup(
-            btnInOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnInOrdenLayout.createSequentialGroup()
-                .addComponent(txtInOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        content.add(btnInOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 160, 40));
-
         txtArbol.setForeground(new java.awt.Color(0, 0, 0));
         txtArbol.setText("Datos del arbol:");
         content.add(txtArbol, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton1.setText("Visualizar");
+        jButton1.setContentAreaFilled(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton2.jpg"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        content.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 170, 60));
+
+        PreOrder.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        PreOrder.setForeground(new java.awt.Color(0, 0, 0));
+        PreOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        PreOrder.setText("PreOrden");
+        PreOrder.setContentAreaFilled(false);
+        PreOrder.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        PreOrder.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        PreOrder.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton2.jpg"))); // NOI18N
+        PreOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PreOrderActionPerformed(evt);
+            }
+        });
+        content.add(PreOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 170, 60));
+
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton3.setText("InOrden");
+        jButton3.setContentAreaFilled(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton2.jpg"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        content.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 170, 60));
+
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton4.setText("PostOrden");
+        jButton4.setContentAreaFilled(false);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton2.jpg"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        content.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 170, 60));
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
         imgFondo.setText("jLabel1");
@@ -285,23 +179,8 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtPostOrdenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPostOrdenMouseClicked
-        cmpRes.setText("");
-        cmpRes.setText(arbol.postOrden());
-    }//GEN-LAST:event_txtPostOrdenMouseClicked
-
-    private void btnPostOrdenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPostOrdenMouseEntered
-        btnPostOrden.setBackground(new Color(0, 160, 230));
-        txtPostOrden.setForeground(Color.WHITE);
-    }//GEN-LAST:event_btnPostOrdenMouseEntered
-
-    private void btnPostOrdenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPostOrdenMouseExited
-        btnPostOrden.setBackground(Color.WHITE);
-        txtPostOrden.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnPostOrdenMouseExited
-
-    private void txtVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtVisualizarMouseClicked
-        ClsNodo2 otro;
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+   ClsNodo2 otro;
         otro = lista.cabizq().enlder();
         for (int i = 1; otro.enlder()!= null; i++){
             ClsNodo nodo = new ClsNodo(otro.inf());
@@ -313,49 +192,23 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
                 Logger.getLogger(WinVisualizarGrafo.class.getName()).log(Level.SEVERE, null, ex);
             }
             otro = otro.enlder();
-        }
-    
-    }//GEN-LAST:event_txtVisualizarMouseClicked
+        }     
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnVisualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisualizarMouseEntered
-        btnVisualizar.setBackground(new Color(0, 160, 230));
-        txtVisualizar.setForeground(Color.WHITE);
-    }//GEN-LAST:event_btnVisualizarMouseEntered
-
-    private void btnVisualizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisualizarMouseExited
-        btnVisualizar.setBackground(Color.WHITE);
-        txtVisualizar.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnVisualizarMouseExited
-
-    private void txtPreOrdenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPreOrdenMouseClicked
+    private void PreOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PreOrderActionPerformed
         cmpRes.setText("");
         cmpRes.setText(arbol.preOrden());
-    }//GEN-LAST:event_txtPreOrdenMouseClicked
+    }//GEN-LAST:event_PreOrderActionPerformed
 
-    private void btnPreOrdenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPreOrdenMouseEntered
-        btnPreOrden.setBackground(new Color(0, 160, 230));
-        txtPreOrden.setForeground(Color.WHITE);
-    }//GEN-LAST:event_btnPreOrdenMouseEntered
-
-    private void btnPreOrdenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPreOrdenMouseExited
-        btnPreOrden.setBackground(Color.WHITE);
-        txtPreOrden.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnPreOrdenMouseExited
-
-    private void txtInOrdenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtInOrdenMouseClicked
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         cmpRes.setText("");
-        cmpRes.setText(arbol.inOrden());
-    }//GEN-LAST:event_txtInOrdenMouseClicked
+        cmpRes.setText(arbol.inOrden());     
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void btnInOrdenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInOrdenMouseEntered
-        btnInOrden.setBackground(new Color(0, 160, 230));
-        txtInOrden.setForeground(Color.WHITE);
-    }//GEN-LAST:event_btnInOrdenMouseEntered
-
-    private void btnInOrdenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInOrdenMouseExited
-        btnInOrden.setBackground(Color.WHITE);
-        txtInOrden.setForeground(Color.BLACK);
-    }//GEN-LAST:event_btnInOrdenMouseExited
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+         cmpRes.setText("");
+        cmpRes.setText(arbol.postOrden());    
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void repintarArbol() {
         this.Desktop.removeAll();
@@ -376,19 +229,15 @@ public class WinVisualizarGrafo extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Desktop;
-    private javax.swing.JPanel btnInOrden;
-    private javax.swing.JPanel btnPostOrden;
-    private javax.swing.JPanel btnPreOrden;
-    private javax.swing.JPanel btnVisualizar;
+    private javax.swing.JButton PreOrder;
     private javax.swing.JTextArea cmpRes;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel txtArbol;
-    private javax.swing.JLabel txtInOrden;
-    private javax.swing.JLabel txtPostOrden;
-    private javax.swing.JLabel txtPreOrden;
-    private javax.swing.JLabel txtVisualizar;
     // End of variables declaration//GEN-END:variables
 }

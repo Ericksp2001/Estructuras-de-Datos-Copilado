@@ -63,6 +63,10 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         txtCosto1 = new javax.swing.JLabel();
         cmpPosicion = new javax.swing.JTextField();
+        txtNomMas1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtArea = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,8 +76,8 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
 
         txtRaza.setBackground(new java.awt.Color(0, 0, 0));
         txtRaza.setForeground(new java.awt.Color(0, 0, 0));
-        txtRaza.setText("Raza:");
-        content.add(txtRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, 20));
+        txtRaza.setText("Especie:");
+        content.add(txtRaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, 20));
 
         txtNomDue.setBackground(new java.awt.Color(0, 0, 0));
         txtNomDue.setForeground(new java.awt.Color(0, 0, 0));
@@ -82,8 +86,7 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
 
         txtNomMas.setBackground(new java.awt.Color(0, 0, 0));
         txtNomMas.setForeground(new java.awt.Color(0, 0, 0));
-        txtNomMas.setText("Nombre Mascota:");
-        content.add(txtNomMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 20));
+        content.add(txtNomMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, 20));
         content.add(cmpFechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 100, -1));
 
         txtPeso.setBackground(new java.awt.Color(0, 0, 0));
@@ -125,22 +128,20 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
         btnHembra.setText("Hembra");
         content.add(btnHembra, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella1.png"))); // NOI18N
-        jButton1.setText("INGRESAR");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton1.setText("Ingresar");
         jButton1.setContentAreaFilled(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella1.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/huella2.png"))); // NOI18N
-        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton2.jpg"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        content.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 120, 100));
+        content.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 130, 60));
 
         txtCosto1.setBackground(new java.awt.Color(0, 0, 0));
         txtCosto1.setForeground(new java.awt.Color(0, 0, 0));
@@ -148,7 +149,24 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
         content.add(txtCosto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, 20));
         content.add(cmpPosicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 120, -1));
 
-        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
+        txtNomMas1.setBackground(new java.awt.Color(0, 0, 0));
+        txtNomMas1.setForeground(new java.awt.Color(0, 0, 0));
+        txtNomMas1.setText("Nombre Mascota:");
+        content.add(txtNomMas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 20));
+
+        txtArea.setColumns(20);
+        txtArea.setRows(5);
+        jScrollPane1.setViewportView(txtArea);
+
+        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, 300));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton2.setText("INGRESAR");
+        jButton2.setContentAreaFilled(false);
+        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton2.jpg"))); // NOI18N
+        content.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 370, 120, 40));
+
+        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo_1.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -184,7 +202,7 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
                 datos.SexoMascota(btnHembra.getText());    
                 }
                 lista.poner(Integer.parseInt(cmpPosicion.getText()), datos, true);
-                
+                txtArea.setText(lista.listar2());
                 JOptionPane.showMessageDialog(null, "Registro Procesado exitosamente");
               }
                 cmpNombreM.setText(null);
@@ -223,12 +241,16 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtArea;
     private javax.swing.JLabel txtCosto;
     private javax.swing.JLabel txtCosto1;
     private javax.swing.JLabel txtEdad;
     private javax.swing.JLabel txtId;
     private javax.swing.JLabel txtNomDue;
     private javax.swing.JLabel txtNomMas;
+    private javax.swing.JLabel txtNomMas1;
     private javax.swing.JLabel txtPeso;
     private javax.swing.JLabel txtRaza;
     private javax.swing.JLabel txtTelefono;

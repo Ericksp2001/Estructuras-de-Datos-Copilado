@@ -84,11 +84,11 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
         content = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtArea = new javax.swing.JTextArea();
-        btnBusqueda = new javax.swing.JButton();
         cmpBuscar = new javax.swing.JTextField();
         btnMascota = new javax.swing.JRadioButton();
         btnDueño = new javax.swing.JRadioButton();
         btnId = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
         imgFondo = new javax.swing.JLabel();
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -97,16 +97,8 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
         txtArea.setRows(5);
         jScrollPane1.setViewportView(txtArea);
 
-        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 170, 320));
-
-        btnBusqueda.setText("Buscar");
-        btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBusquedaActionPerformed(evt);
-            }
-        });
-        content.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 100, 30));
-        content.add(cmpBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 210, 30));
+        content.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 160, 320));
+        content.add(cmpBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 190, 30));
 
         botonGroup1.add(btnMascota);
         btnMascota.setForeground(new java.awt.Color(0, 0, 0));
@@ -116,7 +108,7 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
                 btnMascotaActionPerformed(evt);
             }
         });
-        content.add(btnMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        content.add(btnMascota, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
 
         botonGroup1.add(btnDueño);
         btnDueño.setForeground(new java.awt.Color(0, 0, 0));
@@ -136,9 +128,24 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
                 btnIdActionPerformed(evt);
             }
         });
-        content.add(btnId, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        content.add(btnId, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
 
-        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo.png"))); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton1.setText("Buscar");
+        jButton1.setContentAreaFilled(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton1.png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/boton2.jpg"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        content.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 140, 60));
+
+        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo_3.png"))); // NOI18N
         content.add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -153,24 +160,6 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
-     
-        String busqueda  = cmpBuscar.getText();
-   
-        if(btnDueño.isSelected()){
-            buscar(txtArea,busqueda);
-        }
-        if(btnMascota.isSelected()){
-            buscar(txtArea,busqueda);
-        }
-        if(btnId.isSelected()){
-            buscar(txtArea,busqueda);
-        }
-
-
-    
-    }//GEN-LAST:event_btnBusquedaActionPerformed
-
     private void btnMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMascotaActionPerformed
           txtArea.setText(cola.getCola().InfoMascotas());
     }//GEN-LAST:event_btnMascotaActionPerformed
@@ -183,19 +172,33 @@ public class WinBusquedaListEst extends javax.swing.JPanel {
         txtArea.setText(cola.getCola().InfoIdDueños());
     }//GEN-LAST:event_btnIdActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       String busqueda  = cmpBuscar.getText();
+   
+        if(btnDueño.isSelected()){
+            buscar(txtArea,busqueda);
+        }
+        if(btnMascota.isSelected()){
+            buscar(txtArea,busqueda);
+        }
+        if(btnId.isSelected()){
+            buscar(txtArea,busqueda);
+        }  
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public JPanel getContent() {
         return content;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup botonGroup1;
-    private javax.swing.JButton btnBusqueda;
     private javax.swing.JRadioButton btnDueño;
     private javax.swing.JRadioButton btnId;
     private javax.swing.JRadioButton btnMascota;
     private javax.swing.JTextField cmpBuscar;
     private javax.swing.JPanel content;
     private javax.swing.JLabel imgFondo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtArea;
     // End of variables declaration//GEN-END:variables

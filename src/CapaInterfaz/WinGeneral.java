@@ -9,7 +9,10 @@ package CapaInterfaz;
 import ClsVeterinaria.ClsVeterinaria;
 import EstEnlacesDobles.ClsListDim2;
 import EstEnlacesDobles.ClsPilaDim2;
+import java.awt.Dimension;
+import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
 /**
@@ -30,6 +33,7 @@ public class WinGeneral extends javax.swing.JFrame {
         setSize(716, 548);
     }
 
+       
    
     
     @SuppressWarnings("unchecked")
@@ -50,7 +54,7 @@ public class WinGeneral extends javax.swing.JFrame {
 
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        imgBienvenido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/Bienvenida.png"))); // NOI18N
+        imgBienvenido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CapaImagenes/fondo_4.png"))); // NOI18N
         content.add(imgBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 720, 530));
 
         Opciones.setText("Opciones");
