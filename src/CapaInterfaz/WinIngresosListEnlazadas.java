@@ -213,6 +213,7 @@ public class WinIngresosListEnlazadas extends javax.swing.JPanel {
                 cmpFechaIngreso.setText(null);
                 cmpRaza.setText(null);
                 cmpTelefono.setText(null);
+                cmpPosicion.setText(null);
                
                 
         } catch (Exception e) {

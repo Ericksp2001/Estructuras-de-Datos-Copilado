@@ -6,13 +6,11 @@ package CapaInterfaz;
 
 
 
-import ClsVeterinaria.ClsVeterinaria;
+
 import EstEnlacesDobles.ClsListDim2;
-import EstEnlacesDobles.ClsPilaDim2;
-import java.awt.Dimension;
-import javax.swing.JComponent;
+
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
 /**
@@ -26,6 +24,7 @@ public class WinGeneral extends javax.swing.JFrame {
   WinPacientesListEst win2;
   WinVisualizarGrafo win3;
   WinBusquedaListEst win4;
+    WinCreditos win5;
   
     public WinGeneral( ) {
         initComponents();
@@ -94,6 +93,11 @@ public class WinGeneral extends javax.swing.JFrame {
         Menu.add(Opciones);
 
         Creditos.setText("Creditos");
+        Creditos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CreditosMouseClicked(evt);
+            }
+        });
         Menu.add(Creditos);
 
         setJMenuBar(Menu);
@@ -132,6 +136,11 @@ public class WinGeneral extends javax.swing.JFrame {
             win4=new WinBusquedaListEst(lista);
        showPanel(win4.getContent());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void CreditosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreditosMouseClicked
+       win5=new WinCreditos();
+       showPanel(win5.getContent());
+    }//GEN-LAST:event_CreditosMouseClicked
 
     /**
      * @param args the command line arguments
